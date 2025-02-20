@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>div 태그</h1>
+    <div>개</div>
+    <div>고양이</div>
+    <div>새</div>
+    
+    <hr>
+    
+    <h1>span 태그</h1>
+    <span>개</span>
+    <span>고양이</span>
+    <span>새</span>
+
+    <hr>
+
+    <h1>form 태그</h1>
+    <h2>get 방식</h2>
+    <form action="search.jsp" method="get">
+        <input type="text" name="keyword">
+        <input type="submit" value="검색">
+    </form>
+
+    <hr>
+
+    <h2>post 방식</h2>
+    <form action="search.jsp" method="post">
+        <input type="text" name="keyword">
+        <input type="submit" value="검색">
+    </form>
+
+    <hr>
+    
+    <h2>input 태그</h2>
+    <form action="search.jsp" method="get">
+        <lable for="uid">아이디</label>
+        <input type="text" id="uid" name="userid" value="실제값" placeholder="클릭하면 없어짐">
+    </form>
+
+    <hr>
+
+    <h2>form 태그</h2>
+    <form action="login.jsp" method="get">
+        <lable for="u-id">아이디</label>
+        <input type="text" id="u-id" name="userid" value="" placeholder="아이디">
+    
+        <lable for="u-pw">비밀번호</label>
+        <input type="password" id="u-pw" name="userpw" value="" placeholder="비밀번호">
+    
+        <button type="submit">전송하기</button>
+    </form>
+
+
+    <input type="submit" value="등록">
+    <input type="button" value="팝업창호출">
+    <input type="reset" value="초기화">
+
+    <button type="submit">전송하기</button>
+    <button type="button">팝업창호출</button>
+    <button type="reset">초기화</button>
+
+    <h2>input 태그 checkbox</h2>
+    <!-- 체크박스1 -->
+    <label for="chk-book">독서</label>
+    <input type="checkbox" id="chk-book" name="hobby" value="book" checked="checked">
+
+    <label for="chk-music">음악</label>
+    <input type="checkbox" id="chk-music" name="hobby" value="music">
+
+    <label for="chk-trip">여행</label>
+    <input type="checkbox" id="chk-trip" name="hobby" value="trip" checked="checked">
+    <br><br>
+
+    <!-- 체크박스2 -->
+    <label for="chk-dog">개</label>
+    <input type="checkbox" id="chk-dog" name="pet" value="dog">
+
+    <label for="chk-cat">고양이</label>
+    <input type="checkbox" id="chk-cat" name="pet" value="cat">
+
+    <label for="chk-bird">새</label>
+    <input type="checkbox" id="chk-bird" name="pet" value="bird">
+
+
+    <br>
+    <br>
+    <input type="date" name="" id="">
+</body>
+</html>
