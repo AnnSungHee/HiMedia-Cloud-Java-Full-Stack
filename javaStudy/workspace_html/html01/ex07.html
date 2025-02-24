@@ -3,22 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <title>html공부하기</title>
+        <style>
+            button[type="reset"],
+            [type="submit"]{
+                color: #FF0000;
+            }
+            /* input[name="id"]{
+                color: #0000FF;
+            } */
+            input[name="id"]{
+                color: #0000FF;
+            }
+        </style>
     </head>
     <body>
         <h1>html공부하기</h1>
         <h2>form요소-input(text,password)</h2>
         <form action="" method="get">
-            <label for="">
-                아이디
-            </label>
-            <input type="text" name="aaa" value="" placeholder=""><br>
+            <label for="uid">아이디</label>
+            <input id="uid" type="text" name="id" value="" placeholder="아이디"><br>
             
-            <label>패스워드</label>
-            <input type="password" name="bbb" value="" placeholder=""><br>
+            <label for="upw">패스워드</label>
+            <input id="upw" type="password" name="pw" value="" placeholder="비밀번호"><br>
             
-            <button type="submit">
-                로그인
-            </button>
+            <button type="submit">로그인</button>
+            <button type="reset">초기화</button>
         </form>
 
         <br><br><br><br>
