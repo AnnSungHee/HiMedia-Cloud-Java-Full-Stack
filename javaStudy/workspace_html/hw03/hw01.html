@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>writeForm</title>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td>게시판</td>
+                <td>
+                    <select name="boardType">
+                        <option>선택해주세요</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>제목</td>
+                <td>
+                    <input type="text" placeholder="제목을 입력해 주세요">
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td>
+                    <input type="text" placeholder="패스워드를 입력하세요">
+                </td>
+            </tr>
+            <tr>
+                <td>공개범위</td>
+                <td>
+                    <label for="me">본인</label>
+                    <input id="me" type="radio" value="me" name="range">
+
+                    <label for="signed">로그인 회원</label>
+                    <input id="signed" type="radio" value="signed" name="range">
+                    
+                    <label for="friend">친구</label>
+                    <input id="friend" type="radio" value="friend" name="range">
+                    
+                    <label for="all">전체</label>
+                    <input id="all" type="radio" value="all" name="range">
+                </td>
+            </tr>
+            <tr>
+                <td>허용범위</td>
+                <td>
+                    <label for="allowComments">댓글허용</label>
+                    <input id="allowComments" type="checkbox" name="allowComments">
+
+                    <label for="allowReply">답글허용</label>
+                    <input id="allowReply" type="checkbox" name="allowReply">
+
+                    <label for="allowLiked">좋아요허용</label>
+                    <input id="allowLiked" type="checkbox" name="allowLiked">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <textarea style="width: 400px; height: 400px;" name="bulletin">
+
+                    </textarea>
+                </td>
+                <!-- <td></td> -->
+            </tr>
+            <tr>
+                <td>
+                    <label for="file">
+                        첨부파일
+                    </label>
+                </td>
+                <td>
+                    <input id="file" type="file" >
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">등록</button>
+                </td>
+                <td>
+                    <button type="submit">초기화</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
