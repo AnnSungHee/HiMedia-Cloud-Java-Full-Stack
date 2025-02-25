@@ -13,3 +13,63 @@ h2 {
 h3 {
     font-size: 20px;
 }
+.italic{
+    font-style: italic;
+}
+.blue {
+    color: #0000FF;
+}
+.red {
+    color: #FF0000;
+}
+.green {
+    color: #00FF00;
+}
+.underline {
+    text-decoration: underline;
+}
+.bold {
+    font-weight: bold;
+}
+.bg-gray {
+    background-color: #D9D9D9;
+}
+div.bg-gray > p {
+    text-indent: 30px;
+}
+ul > li {
+    list-style-type: square;
+}
+ol > li {
+    list-style-type: none;
+}
+table > thead > tr > th {
+    background-color: #C8EBFA;
+}
+table > tbody > tr:hover {
+    background-color: #EDD3ED;
+}
+table > tbody > tr > td:nth-child(2) {
+    text-align: right;
+}
+table > tbody > tr > td:nth-child(2)::before {
+    content: "약 ";
+}
+table > tbody > tr > td:nth-child(2)::after {
+    content: "(MB/초)";
+}
+a:link {
+    color: #000000;
+    text-decoration: none;
+}
+a:visited {
+    color: #000000;
+}
+a:hover {
+    color: #0000FF;
+    text-decoration: underline;
+}
+a:active {
+    color: #0000FF;
+    text-decoration: underline;
+}
