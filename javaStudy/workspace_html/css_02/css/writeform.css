@@ -1,0 +1,78 @@
+@charset "UTF-8";
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, 
+input, fieldset, legend, p, select, table, th, td, tr, 
+textarea, button, form {
+    margin: 0; padding: 0;
+}
+
+body { 
+    background-color: #808080;
+    font-family: "맑은 고딕";
+    font-size: 12px;
+    /* margin-left: 10px; */
+}
+
+body > div:first-child {
+    background-color: #FFFFFF;
+}
+
+body > div {
+    margin-left: 10px;
+}
+
+body > div > div {
+    margin-bottom: 10px;
+    
+}
+
+body > div > div > :first-child:not(textarea):not(button) {
+    display: inline-block;
+    width: 80px;
+}
+
+body > div > div:last-child {
+    /* float: ; */
+    margin: 0 auto;
+    width: 125px;
+    /* height: 0px; */
+    /* width: 50%; */
+    /* background-color: red; */
+}
+
+
+/* 일반게시판 */
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+ul > li {
+    list-style: none;
+    float: left;
+    padding-right: 5px;
+}
+
+ul > li::after {
+    content: " >";
+}
+ul > li:last-child::after {
+    content: "";
+}
+
+form {
+    width: 700px;
+    background-color: #FFFFFF;
+}
+button {
+    width: 60px;
+    height: 30px;
+}
+
+textarea {
+    width: 600px;
+    height: 70px;
+}
+
+input#title {
+    width: 400px;
+}

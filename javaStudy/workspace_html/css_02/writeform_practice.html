@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/writeform_practice.css">
+</head>
+<body>
+    <div>
+        <!-- 사이트 제목 -->
+        <h3>회원가입</h3>
+        
+        <!-- breadcrumb -->
+        <ul>
+            <li>홈</li>
+            <li>유저</li>
+            <li>회원가입</li>
+        </ul>
+        
+        <br>
+
+        <!-- 아이디 text -->
+        <div>
+            <label for="uid">아이디</label>
+            <input type="text" name="id" id="uid" placeholder="아이디를 입력하세요">
+        </div>
+
+        <hr>
+        
+        <!-- 패스워드 공간 text -->
+        <div>
+            <label for="upw">패스워드</label>
+            <input type="password" name="pw" id="upw" placeholder="패스워드를 입력하세요">
+        </div>
+        
+        <hr>
+
+        <!-- 이름 공간 text -->
+        <div>
+            <label for="uname">
+                이름
+            </label>
+            <input type="text" name="name" id="uname" placeholder="이름을 입력하세요">
+        </div>
+
+        <hr>
+        
+        <!-- 프로필 사진 button -->
+        <div>
+            <label for="profile-img">
+                프로필 사진
+            </label>
+            <input type="file" id="profile-img"></button>
+        </div>
+        
+        <hr>
+
+        <!-- 주소 text -->
+        <div>
+            <label class="float" for="address" style="display: inline-block;">
+                주소
+            </label>
+            <div style="display: inline-block;">
+
+                <input type="text" name="main_address" id="address" placeholder="주소벨류">
+                <input type="button" value="우편번호찾기">
+                <input type="text" name="detail_address" id="address" placeholder="주소벨류" style="display:block;">
+            </div>
+        </div>
+
+        <hr>
+        
+        <!-- 이동통신사 select -->
+        <div>
+            <label for="telecom">
+                이동통신사
+            </label>
+            <select name="" id="select">
+                <option value="">
+                    선택해주세요
+                </option>
+                <option value="">
+                    SKT
+                </option>
+                <option value="">
+                    KT
+                </option>
+                <option value="">
+                    LGU+
+                </option>
+                <option value="">
+                    알뜰통신사
+                </option>
+            </select>
+        </div>
+        
+        <hr>
+
+        <!-- 나이 radio -->
+        <div>
+            <span>나이</span>
+            <label for="teen">10대</label>
+            <input type="radio" id="teen" name="age">
+            <label for="twenty">20대</label>
+            <input type="radio" id="twenty" name="age">
+            <label for="thirty">30대</label>
+            <input type="radio" id="thirty" name="age">
+            <label for="fourty">40대</label>
+            <input type="radio" id="fourty" name="age">
+            <label for="other">기타</label>
+            <input type="radio" id="other" name="age">
+        </div>
+        
+        <hr>
+
+        <!-- 혈액형 radio -->
+        <div>
+            <span>혈액형</span>
+            <label for="atype">A형</label>
+            <input type="radio" id="atype" name="bloodtype">
+            <label for="btype">B형</label>
+            <input type="radio" id="btype" name="bloodtype">
+            <label for="otype">O형</label>
+            <input type="radio" id="otype" name="bloodtype">
+            <label for="abtype">AB형</label>
+            <input type="radio" id="abtype" name="bloodtype">
+        </div>
+        
+        <hr>
+
+        <!-- 취미 check -->
+        <div>
+            <span>나이</span>
+            <label for="book">독서</label>
+            <input type="checkbox" id="book" name="hobbu">
+            <label for="music">음악</label>
+            <input type="checkbox" id="music" name="hobbu">
+            <label for="travel">여행</label>
+            <input type="checkbox" id="travel" name="hobbu">
+            <label for="movie">영화</label>
+            <input type="checkbox" id="movie" name="hobbu">
+            <label for="coding">코딩</label>
+            <input type="checkbox" id="coding" name="hobbu">
+            <label for="otherhobby">기타</label>
+            <input type="checkbox" id="otherhobby" name="hobby">
+        </div>
+        
+        <hr>
+
+        <!-- 자기소개 textarea -->
+        <div>
+            <label class="float" for="produce">
+                자기소개
+            </label>
+            <textarea name="" id="produce"></textarea>
+        </div>
+    </div>
+</body>
+</html>

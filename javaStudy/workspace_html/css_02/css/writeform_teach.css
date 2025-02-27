@@ -1,0 +1,122 @@
+@charset "UTF-8";
+/* 사용자의 환경마다 동일한 페이지를 보여주기 위해 margin과 padding값 초기화 */
+body, div, ul, ol, li, dl, dt,
+h1, h2, h3, h4, h5, h6, 
+form, fieldset, legend, input, select, textarea, button 
+table, th, td, tr, p{
+    margin: 0; padding: 0;
+}
+
+/* input, textarea, select 태그의 폰트 및 사이즈 설정  */
+input, textarea, select{
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* 리스트의 세부표시 제거 */
+ul>li, ol>li{
+    list-style-type: none;
+}
+
+/* 전체적인 화면의 배경색, 폰트 크기, 폰트 설정 */
+body{
+    background-color: #808080;
+    font-family: "맑은 고딕";
+    font-size: 12px;
+}
+
+/* wrap 클래스  */
+body > div.wrap{
+    /* 화이트 배경 */
+    background-color: #ffffff;
+    /* 배경 유지하면서 공간 확장 */
+    padding:10px;
+    /* 전체 너비 설정 */
+    width: 700px;
+    /*  */
+    box-sizing: border-box;
+    /* 테두리 설정 */
+    border: 1px solid #000;
+}
+
+/* "일반게시판" 글씨체 설정 */
+body > div.wrap > h3{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* 리스트 밑에 요소 올라오지 않게 디스플레이 형식 변경 */
+body > div.wrap > ol#path {
+    display: inline-block;
+}
+
+/* 디자인 형식 구현을 위해 float:left */
+body > div.wrap > ol#path>li{
+    float: left;
+}
+
+/* 닫는 꺽쇠 구현 */
+body > div.wrap > ol#path > li:not(:last-child):after{
+    content: " >";
+    padding-right: 5px;
+}
+
+/* 게시판 등록 사이트의 요소 와 요소 사이의 여백을 주기 위해 아래 여백 증가 */
+body > div.wrap > form > div.form-group{
+    /* margin-bottom : 10px; */
+    margin: 0px 0px 10px 0px
+}
+
+/* label과 화면에 보여지는 요소들을 배치하기 위해 inline-block 삽입 */
+body > div.wrap > form > div.form-group > label{
+    display: inline-block;
+    /* border: 1px solid #000; */
+    /* background-color: red; */
+}
+
+/* 게시판 입력 데이터의 제목을 위해 너비 및 디스플레이 설정 */
+body > div.wrap > form > div.form-group > .form-text{
+    display: inline-block;
+    width: 80px;
+    /* border: 1px solid #000; */
+}
+
+/* 게시판 선택의 select 요소 너비 주기 */
+body > div.wrap > form > div.form-group > #sel-board{
+    width: 200px;
+}
+
+/* 제목의 input 요소 너비 결정 */
+body > div.wrap > form > div.form-group > #txt-title{
+    width: 550px;
+}
+
+/* 비밀번호의 input 요소 너비 결정 */
+body > div.wrap > form > div.form-group > #txt-password{
+    width: 200px;
+}
+
+/* 공개범위 허용범위의 input 태그 오른쪽 여백 주기 */
+.form-group input[type="radio"], 
+.form-group input[type="checkbox"]{
+    margin: 0px 10px 0px 0px;
+}
+
+/* 글 작성 공간 크기 지정 */
+body > div.wrap > form > div.form-group > #txt-content{
+    width: 637px;
+    height: 80px;
+}
+
+/* 등록 초기화 버튼 중앙화 */
+body > div.wrap > form > div.btn-group{
+    padding: 15px 0px 10px 0px;
+    border-top: 2px solid #000;
+    text-align: center;
+}
+
+/* 등록 초기화 버튼 크기 지정 */
+body > div.wrap > form > div.btn-group > button{
+    width: 70px;
+    height: 30px;
+}

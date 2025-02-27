@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/writeform.css">
+</head>
+<body>
+    <div>
+        <h3>일반게시판</h3>
+        
+        <ul>
+            <li>홈</li>
+            <li>게시판</li>
+            <li>일반게시판</li>
+        </ul>
+    
+        <br>
+
+        <div>
+            <label for="boards">게시판 선택</label>
+            <select name="boards" id="">
+                <option value="">선택해주세요</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="title">제목</label>
+            <input type="text" name="" id="title" placeholder="제목을 입력해 주세요">
+        </div>
+
+        <div>
+            <label for="upw">비밀번호</label>
+            <input type="text" name="" id="upw" placeholder="패스워드를 입력하세요">
+        </div>
+        
+        <div>
+            <span>공개범위</span>
+            <label for="me">본인</label>
+            <input type="radio" name="scope" id="me" value="">
+            <label for="signed">로그인회원</label>
+            <input type="radio" name="scope" id="signed" value="">
+            <label for="friend">친구</label>
+            <input type="radio" name="scope" id="friend" value="">
+            <label for="all">전체</label>
+            <input type="radio" name="scope" id="all" value="">
+        </div>
+        
+        <div>
+            <span>허용범위</span>
+            <label for="comment">댓글허용</label>
+            <input type="checkbox" name="allow" id="comment">
+            <label for="reply">답글허용</label>
+            <input type="checkbox" name="allow" id="reply">
+            <label for="like">좋아요허용</label>
+            <input type="checkbox" name="allow" id="like">
+        </div>
+        
+        <div>
+            <textarea name="content" id="">
+                
+            </textarea>
+        </div>
+        
+        <div>
+            <span>첨부파일</span>
+            <button type="button">
+                파일선택
+            </button>
+        </div>
+        
+        <hr>
+        
+        <div>
+            <button type="button">
+                등록
+            </button>
+            <button type="button">
+                초기화
+            </button>
+        </div>
+    </div>
+    
+</body>
+</html>

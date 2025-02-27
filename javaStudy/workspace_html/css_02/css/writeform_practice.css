@@ -1,0 +1,79 @@
+@charset "UTF-8";
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, 
+input, fieldset, legend, p, select, table, th, td, tr, 
+textarea, button, form {
+    margin: 0; padding: 0;
+}
+
+ul > li, ol > li {
+    list-style-type: none;
+    float: left;
+}
+
+/* 전체 디자인 설정 */
+body {
+    background-color: #808080;
+    font-family: "맑은 고딕";
+    font-size: 12px;
+}
+
+/* 사용자 입력 공간 배경 흰색 설정 */
+body > div {
+    background-color: #FFFFFF;
+}
+
+/* bread crumb 적용 */
+li:not(:last-child):after {
+    content: ">";
+}
+
+body > div > div {
+    margin: 8px 0px 8px 0px;
+}
+
+
+body > div > div > :first-child {
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+}
+
+
+
+/* 회원가입 */
+h3 {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+/* 폼 가로 */
+.form-width {
+    width: 600px;
+    font-size: 12px;
+}
+
+/*  */
+input, select, textarea {
+    font-size: 15px;
+    font-family: "맑은 고딕";
+}
+
+/* 버튼 크기 */
+button {
+    width: 120px;
+    padding: 10px 0px 10px 0px;
+}
+
+textarea {
+    width: 220px;
+    height: 120px;
+}
+
+label.float{
+    float: left;
+}
+
+body > div {
+    margin-bottom: 3px solid #000000;
+}

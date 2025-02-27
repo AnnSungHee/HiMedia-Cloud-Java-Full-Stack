@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        ol > li {
+            float: left;
+            list-style-type: none;
+        }
+        
+        li:last-child::after {
+            content: none;
+        }
+
+        li::after {
+            content: ">";
+            padding: 0px 10px 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+        <li>홈</li>
+        <li>게시판</li>
+        <li>일반게시판</li>
+        <li>리스트</li>
+    </ol>
+</body>
+</html>
