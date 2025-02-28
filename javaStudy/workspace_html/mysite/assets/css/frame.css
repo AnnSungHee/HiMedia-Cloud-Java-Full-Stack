@@ -1,0 +1,103 @@
+@charset "UTF-8";
+body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, 
+input, fieldset, legend, p, select, table, th, td, tr, 
+textarea, button, form {
+    margin: 0; padding: 0;
+}
+
+ul > li, ol > li {
+    list-style-type: none;
+}
+
+.clearfix:before, .clearfix:after {
+    display: block;
+    content: ""; 
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
+
+/*  */
+
+
+div#wrap {
+    width: 1000px;
+    margin:0 auto;
+}
+
+h1 {
+    font-size: 35px;
+    font-weight: 900;
+    /* display: inline-block; */
+    float: left;
+    color:#77B206;
+    /* margin-right: 300px; */
+}
+
+.clearfix > ul {
+    float: right;
+}
+
+header.clearfix > ul > li {
+    float: left;
+    padding: 0px 4px 0px 4px;
+    margin-top: 8px;
+    margin-left: 20px;
+    border: 1px solid #000;
+    border-radius: 3px;
+}
+
+header.clearfix > ul {
+    margin-left: 100px;
+}
+
+img {
+    float: left;
+    width: 500px;
+    margin-right: 10px;
+}
+
+nav > ul {
+    padding: 10px 0px 10px 0px;
+}
+
+nav > ul > li {
+    float: left;
+    width: 250px;
+    text-align: center;
+    font-weight: bold;
+    
+    color: #000;
+}
+
+nav  {
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+main {
+    margin-top: 50 25 50 25px;
+}
+
+main > div > p {
+    /* background-color:red; */
+    font-weight: bold;
+    font-size: 25px;
+}
+
+footer > p {
+    padding: 10px 50px 10px 50px;
+    background-color: gray;
+    /* margin: 50px auto; */
+    text-align: center;
+}
+
+a {
+
+}
+
+a:link {
+    color: black;
+    text-decoration: none;
+}

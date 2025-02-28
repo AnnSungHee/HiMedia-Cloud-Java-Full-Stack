@@ -18,6 +18,16 @@ ul>li, ol>li{
     list-style-type: none;
 }
 
+.clearfix:before, .clearfix:after {
+    display: block;
+    content: ""; 
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
+
+
 /* 전체적인 화면의 배경색, 폰트 크기, 폰트 설정 */
 body{
     background-color: #808080;

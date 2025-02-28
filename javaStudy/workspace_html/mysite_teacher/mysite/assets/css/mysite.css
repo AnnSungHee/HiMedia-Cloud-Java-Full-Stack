@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/*---레이아웃------------------*/
+#wrap{
+    width: 1000px;
+    margin: 0px auto;
+}
+
+#wrap header{
+    padding: 10px 0px 10px 0px; 
+    border-bottom: 1px solid #585858;;
+}
+
+#wrap nav{
+    border-bottom: 1px solid #585858;
+}
+
+/*1단*/
+#wrap #content{
+    padding: 20px 20px 20px 20px;
+    background-color: #00ff00;
+}
+
+/*2단*/
+#wrap #content2{
+    padding: 20px 0px 20px 0px;
+    /* background-color: green; */
+}
+
+#wrap #content2 aside {
+    width: 180px;
+    float: left;
+    margin-right: 10px;
+    background-color: #FFFFFF;
+}
+
+#wrap #content2 main {
+    float: left;
+    width: 810px;
+
+    /* background-color: #FF00FF; */
+}
+
+#wrap footer{
+    padding: 10px 0px 10px 0px;
+    background-color: #dddddd;
+}
+/*---//레이아웃----------------*/
+
+/*---header-------------------*/
+header h1{
+    font-size: 35px;
+    color: #79b30b;
+    font-weight: 900;
+    float: left;
+}
+
+header ul{
+    float: right;
+    margin-top: 14px;
+}
+
+header ul>li {
+    float: left;
+    margin-left: 10px;
+    padding: 3px 5px 3px 5px;
+    border-radius: 3px;
+    border: 1px solid #c0c0c0;
+    font-size: 10px;
+}
+/*---//header-------------------*/
+
+/*---nav------------------------*/
+nav ul{
+    padding: 10px 0px 10px 0px;
+}
+nav ul>li{
+    float: left;
+    width: 250px;
+
+
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+
+}
+/*---//nav------------------------*/
+
+/*---footer------------------------*/
+footer p{
+    text-align: center;
+}
+/*---footer------------------------*/
+
+
+/*---메인------------------------*/
+#content #profile{
+    float: left;
+    width: 300px;
+    margin-right: 20px;
+}
+    
+    
+#content #greeting-box{
+    float: left;
+   
+}
+
+#content #greeting-box .greeting{
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/*---/index 페이지------------------------*/
+
+
+/* asdied */
+div#content2 > aside > h2 {
+    background-color: #DDDDDD;
+
+    padding: 15px 0px 15px 0px;
+
+    font-size: 20px;
+    font-weight: 900;
+    
+    text-align: center;
+}
+
+div#content2 > aside > ul > li {
+    margin-top: 5px;
+    padding: 5px;
+
+    border: 1px solid #000;
+}
+
+
+/* main */
+main > div > h2 {
+    padding-left: 10px;
+    float: left;
+}
+
+main > div > ol {
+    float: right;
+    margin-top: 20px;
+}
+
+main > div > ol > li {
+    float: left;
+}
+
+main > div > ol > li:not(:last-child)::after {
+    padding-right : 5px;
+    content: " >";
+    /* background-color: aqua; */
+}
+
+main  h2 {
+    font-size: 20px;
+    font-weight: 900;
+
+    padding: 15px 0px 15px 0;
+    text-align: center;
+}
+
+main > div {
+    /* background-color: aqua; */
+    border: 5px sodlid #000;
+}
+
+#search {
+    border-top: 1px solid #000;
+}
+
+#search > div {
+    padding-top: 15px;
+    float: right;
+}
+
+main > div > input, main > div > button {
+    float: left;
+}

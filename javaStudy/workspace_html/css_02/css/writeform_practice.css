@@ -10,6 +10,16 @@ ul > li, ol > li {
     float: left;
 }
 
+.clearfix:before, .clearfix:after {
+    display: block;
+    content: ""; 
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
+
+
 /* 전체 디자인 설정 */
 body {
     background-color: #808080;

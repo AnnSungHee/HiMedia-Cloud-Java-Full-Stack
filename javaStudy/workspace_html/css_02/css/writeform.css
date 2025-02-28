@@ -5,6 +5,16 @@ textarea, button, form {
     margin: 0; padding: 0;
 }
 
+.clearfix:before, .clearfix:after {
+    display: block;
+    content: ""; 
+    line-height: 0;
+}
+.clearfix:after {
+    clear: both;
+}
+
+
 body { 
     background-color: #808080;
     font-family: "맑은 고딕";
