@@ -1,53 +1,63 @@
 @charset "UTF-8";
-
-/*---레이아웃------------------*/
+/* 레이아웃 꾸미기 */
+/* body의 자식으로서 모든 요소의 전체 너비를 결정하는 속성 */
 #wrap{
+    /* 전체 너비를 1000px로 설정 */
     width: 1000px;
+    /* margin : auto => 요소를 중앙정렬 하고 싶을때 사용 */
     margin: 0px auto;
 }
 
+/* header 태그의 기본적인 꾸미기 및 요소 위치 선택  */
 #wrap header{
+    /* 위와 아래의 여백 추가 */
     padding: 10px 0px 10px 0px; 
+    /* header와 nav의 구분선 추가 */
     border-bottom: 1px solid #585858;;
 }
 
+/* nav 태그의 꾸미기 추가 */
 #wrap nav{
+    /* nav와 밑의 오는 다른 요소와의 구분선 추가 */
     border-bottom: 1px solid #585858;
 }
 
-/*1단*/
+/* index.html의 메인요소 */
 #wrap #content{
     padding: 20px 20px 20px 20px;
-    background-color: #00ff00;
 }
 
 /*2단*/
+/* content2 내부의 요소 위치를 지정 */
 #wrap #content2{
     padding: 20px 0px 20px 0px;
-    /* background-color: green; */
 }
 
+/* aside와 main의 적절한 위치를 위해 설정 */
 #wrap #content2 aside {
-    width: 180px;
     float: left;
+    width: 180px;
     margin-right: 10px;
     background-color: #FFFFFF;
 }
 
+/* main과 aside의 적절한 위치 설정 */
 #wrap #content2 main {
     float: left;
     width: 810px;
-
-    /* background-color: #FF00FF; */
 }
 
+/* footer의 기본 컬러 및 위 아래 여백 부여 */
 #wrap footer{
     padding: 10px 0px 10px 0px;
     background-color: #dddddd;
 }
-/*---//레이아웃----------------*/
 
-/*---header-------------------*/
+/* 개별요소 */
+
+/* header */
+
+/* 사이트이름을 꾸미는 CSS */
 header h1{
     font-size: 35px;
     color: #79b30b;
@@ -55,67 +65,73 @@ header h1{
     float: left;
 }
 
+/* 리스트의 순서를 맞추기 위해  ul 태그 전체를 오른쪽으로 정렬 */
 header ul{
     float: right;
     margin-top: 14px;
 }
 
+/* 로그인 회원가입 요소 설정 */
 header ul>li {
+    /* 리스트 순서를 맞추기 위해 왼쪽으로 띄우기 */
     float: left;
+    /* 전체 요소의 위치 설정 */
     margin-left: 10px;
+    /* 버튼 모양을 만들기 위해 테두리와의 여백 설정 */
     padding: 3px 5px 3px 5px;
+    /* 버튼 모양 만들기 */
     border-radius: 3px;
+    /* 버튼 테두리 만들기 */
     border: 1px solid #c0c0c0;
+    /* 글자 크기 설정 */
     font-size: 10px;
 }
-/*---//header-------------------*/
 
-/*---nav------------------------*/
+/* nav 태그 내부의 요소 꾸미기 */
 nav ul{
     padding: 10px 0px 10px 0px;
 }
+
 nav ul>li{
     float: left;
+    /* nav를 구성하는 요소들은 총 4개이고 전체 너비는 1000px이므로 250px 할당 */
     width: 250px;
 
-
+    /* 글자 꾸미기 */
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-
 }
-/*---//nav------------------------*/
 
-/*---footer------------------------*/
+/* footer 태그 내부의 요소 꾸미기 */
 footer p{
     text-align: center;
 }
-/*---footer------------------------*/
 
-
-/*---메인------------------------*/
+/* index 페이지의 중심 글 꾸미기 */
+/* img 태그의 위치 설정 */
 #content #profile{
     float: left;
     width: 300px;
     margin-right: 20px;
 }
-    
-    
+
+/* 인사글의 위치 설정 */
 #content #greeting-box{
     float: left;
    
 }
 
+/* 강조처리된 글들 위치 설정 및 강조 처리 */
 #content #greeting-box .greeting{
     margin-bottom: 20px;
     font-weight: bold;
     font-size: 20px;
 }
 
-/*---/index 페이지------------------------*/
+/* aside */
 
-
-/* asdied */
+/* 카테고리의 제목 스타일 부여 */
 div#content2 > aside > h2 {
     background-color: #DDDDDD;
 
@@ -127,6 +143,7 @@ div#content2 > aside > h2 {
     text-align: center;
 }
 
+/* 카테고리 리스트의 스타일 부여 */
 div#content2 > aside > ul > li {
     margin-top: 5px;
     padding: 5px;
@@ -134,13 +151,13 @@ div#content2 > aside > ul > li {
     border: 1px solid #000;
 }
 
+/* list.html의 main */
 
-/* main */
+/* 현재 페이지의 제목 스타일 부여 */
 main > div > h2 {
-    padding-left: 10px;
     float: left;
 }
-
+/* Bread Crumb 스타일 부여 */
 main > div > ol {
     float: right;
     margin-top: 20px;
@@ -153,7 +170,6 @@ main > div > ol > li {
 main > div > ol > li:not(:last-child)::after {
     padding-right : 5px;
     content: " >";
-    /* background-color: aqua; */
 }
 
 main  h2 {
@@ -164,13 +180,8 @@ main  h2 {
     text-align: center;
 }
 
-main > div {
-    /* background-color: aqua; */
-    border: 5px sodlid #000;
-}
-
-#search {
-    border-top: 1px solid #000;
+main > div:first-child {
+    border-bottom: 1px solid #000;
 }
 
 #search > div {

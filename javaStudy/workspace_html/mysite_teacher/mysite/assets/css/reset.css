@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 /* 기본 요소 초기화 */
 body, div, p, dl, dt, ol, ul, li,
 h1, h2, h3, h4, h5, h6, 
@@ -18,28 +17,35 @@ ul, ol {
 
 /* 텍스트 관련 초기화 */
 h1, h2, h3, h4, h5, h6 {
-    font-size: inherit; /* 상속된 폰트 사이즈 사용 */
-    font-weight: normal; /* 기본 폰트 두께 설정 */
+    /* 상속된 폰트 사이즈 사용 */
+    font-size: inherit; 
+    /* 기본 폰트 두께 설정 */
+    font-weight: normal; 
 }
 
 /* 테이블 스타일 초기화 */
 table {
-    border-collapse: collapse; /* 테이블 경계 합치기 */
+    /* 테이블 경계 합치기 */
+    border-collapse: collapse; 
 }
 
 /* 기본 폼 요소 초기화 */
 input, button, textarea, select {
-    font-family: inherit; /* 폰트 패밀리 상속 */
-    font-size: inherit; /* 폰트 사이즈 상속 */color: inherit;
-        /* 텍스트 색상 상속 */
+    /* 폰트 패밀리 상속 */
+    font-family: inherit; 
+    /* 폰트 사이즈 상속 */
+    font-size: inherit;
+    /* 텍스트 색상 상속 */
+    color: inherit;
 }
 
 /* 앵커 태그 초기화 */
 a {
-    text-decoration: none; /* 밑줄 제거 */
-    color: inherit; /* 부모 색상 상속 */
+    /* 밑줄 제거 */
+    text-decoration: none; 
+    /* 부모 색상 상속 */
+    color: inherit; 
 }
-
 
 /* clearfix */
 .clearfix::before, .clearfix::after {display: block; content: ""; line-height: 0;}

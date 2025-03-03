@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Mysite</title>
+    <!-- reset.css 가져와서 항상 동일한 상태에서 보여주도록 설정 -->
     <link rel="stylesheet" href="../../assets/css/reset.css">
+    <!-- 첫번째 화면만을 위한 css파일 -->
     <link rel="stylesheet" href="../../assets/css/mysite.css">
-    
 </head>
 <body>
+    <!-- body밑에 바로 div 태그를 선언함으로써 화면의 요소들을 해당 div의 영향을 받는다 (너비, 위치) -->
     <div id="wrap">
+        <!-- <header> : 소개 밑 탐색에 도움을 주는 콘텐츠 -->
         <header class="clearfix">
+            <!-- 사이트 이름(ex 책 이름) -->
             <h1>MySite</h1>
 
+            <!-- 로그인 및 회원가입 버튼 순서가 없는 리스트이기에 ul로 표시 -->
             <ul class="clearfix">
                 <li>로그인</li>
                 <li>회원가입</li>
             </ul>
         </header>
-        <!--/header-->
-
+        <!-- <nav> : 현재 페이지 또는 다른 페이지로의 링크를 보여주는 구회 -->
         <nav>
             <ul class="clearfix">
                 <li>입사지원서</li>
@@ -27,7 +31,7 @@
                 <li>방명록</li>
             </ul>
         </nav>
-
+        <!-- 해당 페이지의 메인 콘텐츠 -->
         <div id="content" class="clearfix">
             <img id="profile" src="../../assets/images/profile.jpg">
 
@@ -51,9 +55,9 @@
                     <a href="#">[방명록에 글 남기기]</a>
                 </p>
             </div>
-
         </div>
 
+        <!-- <footer> : 일반적으로 구획의 작성자, 저작권 정보, 관련 문서 등의 내용을 담는다. -->
         <footer>
             <p>Copyright ⓒ2025 황일영. All right reserved</p>
         </footer>
