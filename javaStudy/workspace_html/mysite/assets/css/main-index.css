@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+div.index-content > main {
+    margin-top: 20px;
+    padding: 20px;
+}
+
+main > img {
+    float: left;
+    width: 300px;
+    margin-right: 30px;
+}
+
+main > div {
+    float: left;
+}
+
+p.emphasis {
+    font-weight: bold;
+}

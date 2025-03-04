@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+#wrap {
+    /* 전체 너비 부여 */
+    width: 1000px;
+    /* 내부 요소들 중앙 */
+    margin: 0px auto;
+}
+
+body {
+    font-family: "맑은 고딕";
+    font-size: 12px;
+}
+
+header {
+    height: 65px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom:2px solid #000 ;
+}
+
+header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #79B30B;
+    /* text-decoration: line-through; */
+}
+
+header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header ul a {
+    padding: 3px 6px;
+    border: 1px solid #bfbfbf;
+    border-radius: 2px;
+    
+    background-color: #FFF;
+    text-align: center;
+
+    margin-left: 5px;
+}
+
+nav {
+    background-color: #FFF;
+    border-bottom:2px solid #000 ;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav > ul > a {
+    /* flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1; */
+    
+    flex: 1 1 0;
+
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px 0px;
+}
+
+footer {
+    padding: 10px 0px 10px 0px;
+    background-color: #DDDDDD;
+    text-align: center;
+}
+
+
+div.content {
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    width: 180px;
+}
+
+aside > h2 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: #DDDDDD;
+}
+
+aside > ul > a > li {
+    font-size: 15px;
+    border: 1px solid #c0c0c0;
+    padding: 5px ;
+    margin-top: 5px;
+}
+
+main {
+    width: 810px;
+    margin-left: 10px;
+}
+
+main > div.breadcrumb  {
+    margin-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+main > div.breadcrumb > h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+main > div.breadcrumb > ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+main > div.breadcrumb > ul > li {
+    margin-left: 5px;
+}
+
+main > div.breadcrumb > ul > li:not(:last-child):after {
+    content: " > ";
+}

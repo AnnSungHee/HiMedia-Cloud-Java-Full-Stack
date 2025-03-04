@@ -1,0 +1,49 @@
+@charset "UTF-8";
+/* 
+    flex-wrap: nowrap;          => 아이템들을 한 줄에 모두 배치, 줄 바꿈 허용 안 함(기본 값)
+    flex-wrap: wrap;            => 아이템들이 컨테이너를 벗어나면 줄 바꿈을 허용
+    flex-wrap: wrap-reverse;    => 줄 바꿈을 허용하지만, 줄이 역순으로 쌓임
+*/
+
+.container{
+    width: 500px;
+    height: 200px;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    /* flex-wrap: nowrap; */
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse; */
+    /* align-content: flex-start; */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    /* flex-wrap: nowrap; */
+    flex-wrap: wrap;
+    /* flex-wrap: wrap-reverse; */
+}
+
+.item1 {
+    border: 3px solid #F00;
+    font-size: 15px;
+}
+
+.item2 {
+    border: 3px solid #0F0;
+    font-size: 20px;
+}
+
+.item3 {
+    border: 3px solid #00F;
+    font-size: 25px;
+}

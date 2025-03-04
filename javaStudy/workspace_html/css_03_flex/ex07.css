@@ -1,0 +1,48 @@
+@charset "UTF-8";
+/*  flex-grow : "속성값(숫자)"
+    - 부모 요소의 방향에 따라 남은 여백을 비율에 따라서 나눠 가진다.
+*/
+
+.container{
+    /* width: 500px; */
+    height: 200px;
+    border: 3px solid #000;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.item1 {
+    border: 3px solid #F00;
+    flex-basis: 0;
+    flex-grow: 1;
+    
+}
+
+.item2 {
+    border: 3px solid #0F0;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+.item3 {
+    border: 3px solid #00F;
+    flex-basis: 0;
+    flex-grow: 1;
+}

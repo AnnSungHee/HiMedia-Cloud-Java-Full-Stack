@@ -1,0 +1,56 @@
+@charset "UTF-8";
+/*  flex-basis : "속성값"
+    - 자식 요소의 가로 폭 사이즈를 결정한다.
+    - 가변적으로 변하는 부모 요소의 비례해서 변경이 가능
+    flex-basis : auto;          =>  기본값 컨텐츠의 가로값을 폭으로 갖는다.
+    flex-basis : 0;             =>  가로값을 0으로 계산하지만 컨텐츠는 보여준다.
+    flex-basis : 숫자(px, %);   =>  입력한 값으로 가로(세로)가 결정된다.
+                                    부모의 방향(flex-direction)에 따라 변경된다;
+*/
+
+.container{
+    width: 500px;
+    height: 200px;
+    border: 3px solid #000;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.item1 {
+    border: 3px solid #F00;
+    font-size: 15px;
+    /* 해당 클래스는 div의 적용되어 있고 블록태그이기 때문에 width 속성이 적용된다. */
+    /* width: 70px; */
+    /* flex-basis: auto; */
+    /* flex-basis: 0; */
+    flex-basis: 0;
+}
+
+.item2 {
+    border: 3px solid #0F0;
+    font-size: 20px;
+    flex-basis: 0;
+}
+
+.item3 {
+    border: 3px solid #00F;
+    font-size: 25px;
+    flex-basis: 0;
+}

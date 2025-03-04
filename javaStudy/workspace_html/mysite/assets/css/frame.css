@@ -1,103 +1,104 @@
 @charset "UTF-8";
-body, div, ul, li, dl, dt, ol, h1, h2, h3, h4, h5, h6, 
-input, fieldset, legend, p, select, table, th, td, tr, 
-textarea, button, form {
-    margin: 0; padding: 0;
-}
-
-ul > li, ol > li {
-    list-style-type: none;
-}
-
-.clearfix:before, .clearfix:after {
-    display: block;
-    content: ""; 
-    line-height: 0;
-}
-.clearfix:after {
-    clear: both;
-}
-
-/*  */
-
 
 div#wrap {
     width: 1000px;
-    margin:0 auto;
+    margin: 0px auto;
 }
 
-h1 {
+header {
+    padding: 10px 0px 10px 0px;
+    border-bottom: 1px solid #000;
+}
+
+header > h1 {
+    float: left;
+
+    color: #79b30b;
     font-size: 35px;
     font-weight: 900;
-    /* display: inline-block; */
-    float: left;
-    color:#77B206;
-    /* margin-right: 300px; */
 }
 
-.clearfix > ul {
+header > ul {
     float: right;
 }
 
-header.clearfix > ul > li {
+header > ul > li {
     float: left;
-    padding: 0px 4px 0px 4px;
-    margin-top: 8px;
-    margin-left: 20px;
-    border: 1px solid #000;
+
+    padding: 5px;
+    margin-top: 15px;
+    margin-left: 5px;
+    border: 1px solid #c0c0c0;
     border-radius: 3px;
-}
 
-header.clearfix > ul {
-    margin-left: 100px;
-}
-
-img {
-    float: left;
-    width: 500px;
-    margin-right: 10px;
-}
-
-nav > ul {
-    padding: 10px 0px 10px 0px;
+    font-size: 10px;
 }
 
 nav > ul > li {
     float: left;
     width: 250px;
+    padding: 10px 0px 10px 0px;
+    
     text-align: center;
     font-weight: bold;
+    font-size: 20px;
     
-    color: #000;
-}
-
-nav  {
-    border-top: 1px solid #000;
     border-bottom: 1px solid #000;
 }
 
-main {
-    margin-top: 50 25 50 25px;
-}
-
-main > div > p {
-    /* background-color:red; */
-    font-weight: bold;
-    font-size: 25px;
-}
-
-footer > p {
-    padding: 10px 50px 10px 50px;
-    background-color: gray;
-    /* margin: 50px auto; */
+footer {
+    padding: 10px 0px 10px 0px;
+    background-color: #DDDDDD;
     text-align: center;
 }
 
-a {
-
+aside {
+    float: left;
+    width: 180px;
+    margin-right: 10px;
 }
 
-a:link {
-    color: black;
-    text-decoration: none;
+aside > h2 {
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    padding: 20px;
+    background-color: #DDDDDD;
+}
+
+aside > ul > li {
+    font-size: 15px;
+    border: 1px solid #c0c0c0;
+    padding: 5px ;
+    margin-top: 5px;
+}
+
+main {
+    float: left;
+    width: 810px;
+}
+
+main > div.clearfix  {
+    margin-top: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #000;
+}
+
+main > div.clearfix > h3 {
+    float: left;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+main > div.clearfix > ul {
+    float: right;
+}
+
+main > div.clearfix > ul > li {
+    float: left;
+    margin-left: 5px;
+}
+
+main > div.clearfix > ul > li:not(:last-child):after {
+    content: " > ";
 }

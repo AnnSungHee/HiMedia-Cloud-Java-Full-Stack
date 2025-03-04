@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+div.content {
+    margin-top: 25px;
+}
+
+main > form {
+    margin-top: 10px;
+}
+
+main > form > div > textarea {
+    width: 790px;
+    /* padding: 5px; */
+    margin-left: 0px auto;
+}
+
+main > *:not(:first-child) {
+    border: 1px solid #000;
+}
+
+
+button {
+    padding: 5px 20px;
+}

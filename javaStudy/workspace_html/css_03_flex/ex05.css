@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/*  align-self : "속성값"
+    - 부모의 align-items 속성을 자식 하나의 요소에만 적용
+    - align-items의 모든 속성을 적용 가능
+    align-self : flex-start;    =>  시작 부분 정령 
+    align-self : flex-end;      =>  끝 부분 정렬
+    align-self : center;        =>  중앙 정렬
+    align-self : baseline;      =>  항목의 기준선에 맞춤
+    align-self : stretch;       =>  아이템을 늘려서 맞춤
+*/
+
+.container{
+    width: 500px;
+    height: 200px;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+
+    /* 주축을 기준으로의 위치 */
+    justify-content: center;
+    /* 교차축을 기준으로의 위치 */
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.item1 {
+    border: 3px solid #F00;
+    font-size: 15px;
+    align-self: flex-start;
+}
+
+.item2 {
+    border: 3px solid #0F0;
+    font-size: 20px;
+    align-self: flex-end;
+}
+
+.item3 {
+    border: 3px solid #00F;
+    font-size: 25px;
+    align-self: stretch;
+}

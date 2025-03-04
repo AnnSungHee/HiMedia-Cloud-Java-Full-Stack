@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+div.content {
+    margin-top: 25px;
+}
+
+main > form {
+    border: 1px solid #000; 
+    /* text-align: center; */
+    width: 600px;
+    margin: 10px 0px 20px 100px;
+}
+
+main > form > div {
+    margin-bottom: 25px;
+}
+
+main > form > div > * {
+    display: inline-block;
+}
+
+main > form > div:first-child, 
+main > form > div:last-child {
+    margin-top: 50px;
+    
+}
+
+main > form > div > :not(:last-child):first-child {
+    width: 200px;
+    text-align: right;
+    margin-right: 10px;
+}
+
+main > form > div:last-child {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+main > form > div:last-child > button {
+    padding: 5px 20px;
+}

@@ -1,0 +1,51 @@
+@charset "UTF-8";
+/*  order : "integer"
+    - HTML에 작성된 순서를 바꾸는 속성
+    - 기본적으로 속성들은 0의 값을 가지고 있다.
+    - 음수도 적용 가능
+    - HTML에 작성된 순서와 다르게 보여지는걸 바꿔주기 때문에 
+      스크린 리더의 경우 기존 HTML 그대로 읽어준다.
+*/
+
+.container{
+    width: 500px;
+    height: 200px;
+    border: 1px solid #000;
+    margin-bottom: 20px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+    /* flex-wrap: wrap; */
+    /* flex-wrap: wrap-reverse; */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    flex-wrap: nowrap;
+}
+
+.item1 {
+    border: 3px solid #F00;
+    font-size: 15px;
+    order: 2;
+}
+
+.item2 {
+    border: 3px solid #0F0;
+    font-size: 20px;
+    order: 3;
+}
+
+.item3 {
+    border: 3px solid #00F;
+    font-size: 25px;
+    order: 1;
+}
