@@ -2,32 +2,34 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Mysite-flex</title>
     <link rel="stylesheet" href="../../assets/css/reset.css">
     <link rel="stylesheet" href="../../assets/css/frame.css">
     <link rel="stylesheet" href="../../assets/css/guest_book/guest_book-list-flex.css">
 </head>
 <body>
     <div id="wrap">
-        <!-- header -->
-        <header class="clearfix">
-            <h1>Mysite</h1>
+        <header>
+            <h1>
+                <a href="">MySite</a>
+            </h1>
             <ul>
-                <li><a href="">로그인</a></li>
-                <li><a href="">회원가입</a></li>
+                <li>
+                    <a href="">로그인</a>
+                </li>
+                <li>
+                    <a href="">회원가입</a>
+                </li>
             </ul>
         </header>
-
-        <!-- nav -->
-        <nav class="clearfix">
+        <nav>
             <ul>
-                <li><a href="">입사지원서</a></li>
-                <li><a href="">게시판</a></li>
-                <li><a href="">갤러리</a></li>
-                <li><a href="">방명록</a></li>
+                <a href=""><li>입사지원서</li></a>
+                <a href=""><li>게시판</li></a>
+                <a href=""><li>갤러리</li></a>
+                <a href=""><li>방명록</li></a>
             </ul>
         </nav>
-
         <div class="content">
             <!-- aside -->
             <aside>
@@ -55,44 +57,70 @@
                 <form>
                     <div>
                         <label action="">이름</label>
-                        <input type="text">
+                        <div>
+                            <input type="text">
+                        </div>
                         <label action="">패스워드</label>
-                        <input type="password">
+                        <div>
+                            <input type="password">
+                        </div>
                     </div>
                     <div>
                         <textarea name="" id=""></textarea>
                     </div>
-                    <button>
-                        등록
-                    </button>
+                    <div>
+                        <button>
+                            등록
+                        </button>
+                    </div>
                 </form>
 
-                <div>
-                    <div>
-                        <p>1234555</p>
-                        <p>이정재</p>
-                        <p>2020-03-03 12:12:12</p>
-                        <p>[삭제]</p>
-                    </div>
-                    <div>
-                        <p>방명록 글입니다. 방명록 글입니다.</p>
-                    </div>
-                </div>
 
-                <div>
-                    <div>
-                        <p>1234555</p>
-                        <p>이정재</p>
-                        <p>2020-03-03 12:12:12</p>
-                        <p>[삭제]</p>
-                    </div>
-                    <div>
-                        <p>방명록 글입니다. 방명록 글입니다.</p>
-                    </div>
-                </div>
+                <table border="1">
+                    <tr>
+                        <td>
+                            <p>1234555</p>
+                        </td>
+                        <td>
+                            <p>이정재</p>
+                        </td>
+                        <td>
+                            <p>2020-03-03 12:12:12</p>
+                        </td>
+                        <td>
+                            <p>[삭제]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <p>방명록 글입니다. 방명록 글입니다.</p>
+                        </td>
+                    </tr>
+                </table>
+
+                <table border="1">
+                    <tr>
+                        <td>
+                            <p>1234555</p>
+                        </td>
+                        <td>
+                            <p>이정재</p>
+                        </td>
+                        <td>
+                            <p>2020-03-03 12:12:12</p>
+                        </td>
+                        <td>
+                            <p>[삭제]</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <p>방명록 글입니다. 방명록 글입니다.</p>
+                        </td>
+                    </tr>
+                </table>
             </main>
         </div>
-        <!-- footer -->
         <footer>
             <p>Copyright © 2025 안성희. All right reserved</p>
         </footer>

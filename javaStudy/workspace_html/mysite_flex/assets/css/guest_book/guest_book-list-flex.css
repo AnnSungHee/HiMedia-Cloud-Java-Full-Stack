@@ -1,38 +1,85 @@
 @charset "UTF-8";
 
 form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-form > div:nth-child(1) {
+    margin-top: 15px;
     border: 1px solid #000;
 }
 
-form > div:nth-child(1) > * {
+form > div:first-child {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+form > div:first-child > label {
+    width: 70px;
+    height: 27px;
     border-right: 1px solid #000;
-}
-
-form > div:nth-child(1) > label {
-    display: inline-block;
-    width: 80px;
-    height: 30px;
-    margin-left: 5px;
-    /* background-color: #F0F; */
-}
-
-form > div:nth-child(1) > input {
     padding-top: 5px;
-    display: inline-block;
-    width: 305px;
+    padding-left: 5px;
+
+    /* background-color: aqua; */
+}
+
+form > div:first-child > div {
+    padding-top: 4px;
+    padding-left: 4px;
+    padding-right: 5px;
+}
+
+form > div:first-child input {
+    width: 315px;
+    height: 20px;
+}
+
+form > div:first-child > div:nth-child(2) {
+    /* width: 100px; */
+    /* height: 10px; */
+    border-right: 1px solid #000;
+    /* padding-top: 5px; */
+    /* background-color: red; */
 }
 
 form > div:nth-child(2) {
-    background-color: #FF0;
+    /* background-color: #000; */
+    border-bottom: 1px solid #000;
+    width: 100%;
+}
+
+form > div:nth-child(2) > textarea {
+    text-align: center;
+    /* background-color: #000; */
+    /* padding: 10px; */
+    width: 794px;
+    height: 100px;
+    margin: 5px;
 }
 
 form > div:nth-child(3) {
-    align-items: center;
-    background-color: #F0F;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    
+}
+
+form > div:nth-child(3) > button {
+    width: 100px;
+    height: 30px;
+    margin: 5px;
+}
+
+main > table {
+    width: 810px;
+    height: 80px;
+    margin-top: 15px;
+}
+
+main > table p {
+    padding-left: 15px;
+}
+
+main > :last-child {
+    margin-bottom: 35px;
 }

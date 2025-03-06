@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        *{padding: 0; margin: 0;}
+        
+        body{
+            padding: 50px;
+            position: relative;
+        }
+
+        .wrap {
+            margin: 0 auto;
+            width: 1000px;
+            border: 1px solid #000;
+            position: static;
+        }
+
+        .box-red {
+            width: 300px;
+            height: 100px;
+            background-color: red;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            /* right: 50px; */
+            /* bottom: 0px; */
+        }
+
+        .box-green {
+            width: 400px;
+            height: 100px;
+            background-color: green;
+            position: relative;
+        }
+
+        .box-pink {
+            width: 500px;
+            height: 100px;
+            background-color: pink;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    모든 요소는 position: static 값을 가진다.
+    <div class="wrap">
+        <div class="box-red">빨간상자</div>
+        <div class="box-green">초록상자</div>
+        <div class="box-pink">분홍상자</div>
+    </div>
+    
+</body>
+</html>
