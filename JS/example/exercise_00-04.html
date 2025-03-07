@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>멤버십 0.1%</title>
+</head>
+<body>
+    <script>
+        let price = parseInt(prompt("얼마 샀니?"));
+        let membership = confirm("근데 너 회원이니?");
+        let discount = null;
+        let discountRate = "";
+        if(price >= 50000){
+            discount += 10;
+            discountRate += "50000원 이상 사서 10% 할인 <hr>"
+        } else if (price >= 30000) {
+            discount += 5;
+            discountRate += "30000원 이상 사서 5% 할인 <hr>"
+        }
+        if(membership) {
+            discountRate += "VIP셔서 5% 추가 할인 <hr>"
+            discount += 5;
+        }
+        document.write(discountRate);
+        document.write("총 가격은 " + price*(100-discount)/100 + "원 입니다.");
+    </script>
+</body>
+
+</html>

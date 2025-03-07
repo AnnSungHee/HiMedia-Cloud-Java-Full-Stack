@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>성인 사우나..?</title>
+</head>
+
+<body>
+    <script>
+        let age = parseInt(prompt("나이를 입력하세요: (0~100)"));
+        let sex = prompt("성별을 입력하세요: ");
+        let str = "";
+        if (age < 0) {
+            str += "올바른 나이를 입력해주세요. <br>"
+        } else {
+            if(age >= 20) {
+                if (sex === "남") {
+                    str += sex + " 는(은) 왼쪽입니다.";
+                } else {
+                    str += sex + "는(은) 오른쪽입니다.";
+                }
+            } else {
+                str += "미성년자는 출입을 금지합니다.";
+            }
+        }
+        document.write(str);
+    </script>
+</body>
+
+</html>

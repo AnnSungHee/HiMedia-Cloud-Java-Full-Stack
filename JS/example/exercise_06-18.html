@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>함수와 변수의 범위</title>
+</head>
+
+<body>
+    <h1>버튼으로 매개변수 전달하기</h1>
+    <script>
+        function change(colors) {
+            const alter = document.getElementById("alter");
+            alter.style.color = colors;
+        }
+    </script>
+
+    <h2 id="alter">Change Colors</h1>
+    <button onclick="change('red')">red</button>
+    <button onclick="change('blue')">blue</button>
+    <button onclick="change('yellow')">yellow</button>
+    <button onclick="change('green')">green</button>
+</body>
+
+</html>
+

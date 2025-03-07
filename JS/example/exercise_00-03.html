@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>멤버십 0.1%</title>
+</head>
+50000원 이상이면 
+<body>
+    <script>
+        let age = parseInt(prompt("나이를 입력하세요: (0~100)"));
+        let membership = confirm("회원이신가요?");
+        let fee = 36000;
+
+        if(membership) {
+            fee = fee * 9 / 10;
+        }
+
+        if (age <= 13) {
+            fee /= 2;
+        }
+        document.write("최종입장료 : " + fee + "원");
+    </script>
+</body>
+
+</html>

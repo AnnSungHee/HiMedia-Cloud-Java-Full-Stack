@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>멤버십 0.1%</title>
+</head>
+<body>
+    <script>
+        let budget = 100000;
+
+        // while(budget >= 1000) {
+        let price = parseInt(prompt("출금 금액 : "));
+        
+        if(price > budget) {
+            document.write("돈 도 없는게 까불어 팍 씨 <br> 잔액 : " + (budget));
+        } else if (price >= budget/2) {
+            document.write("오늘 좀 무리하는데? <br> 잔액 : " + (budget - price));
+            budget -= price;
+        } else if (price > 0) {
+            document.write("적절하네~ :) <br> 잔액 : " + (budget - price));
+            budget -= price;
+        } else {
+            document.write("그건 돈이 아님;;");
+        }
+        // }
+        function clickbutton() {
+            document.getElementById("bank").innerHTML += "<p>두둥탁</p>"
+
+        }
+    
+    </script>
+    
+    <button onclick="clickbutton()">버튼</button>
+    <div id="bank"></div>
+</html>
