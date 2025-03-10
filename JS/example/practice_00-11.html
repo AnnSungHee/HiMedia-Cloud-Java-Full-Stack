@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>실습시간</title>
+</head>
+
+<body>
+    <h1>너 몇 등급이니?</h1>
+    <script>
+        let score = parseInt(prompt("점수를 입력하세요: (0~100)"))
+        let str = "";
+        if (score < 0 || score > 100) {
+            str += "유효하지 않은 점수입니다."
+        } else {
+            if (score >= 60) {
+                str += "합격입니다.<br>"
+                switch (score / 10) {
+                    case 10:
+                        str += "A등급입니다."
+                        break;
+                    case 9:
+                        str += "A등급입니다."
+                        break;
+                    case 8:
+                        str += "B등급입니다."
+                        break;
+                    case 7:
+                        str += "C등급입니다."
+                        break;
+                    case 6:
+                        str += "D등급입니다."
+                        break;
+                }
+            } else {
+                str += "불합격입니다.";
+            }
+        }
+        document.write(str);
+        // 사용자에게 점수 받기
+        // 점수별 등급 판정
+        // 나누기 10을하면 10의 자리 숫자다 나옴
+        // 그 외의 점수를 
+    </script>
+</body>
+
+</html>

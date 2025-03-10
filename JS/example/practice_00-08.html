@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>택시요금</title>
+    <script>
+        // 기본 요금
+        let basicFee = 3000;
+        // 거리
+        let distance = parseInt(prompt("거리가 얼마나 됩니까?"));
+        // 탑승시간
+        let boardingTime = parseInt(prompt("지금 몇시요?"));
+        // 결과물
+        let result = "";
+        // 최종요금
+        let totalFee = 3000;
+        
+        if(distance <= 10) {
+            totalFee += distance * 500;
+            document.write("10km 이하입니다. " + distance + "km * " + 500 + " = " + totalFee + "원<br>");
+        } else {
+            totalFee += 5000 + (distance-10) * 700;
+            document.write("10km 초과입니다.<br>");
+        }
+
+        if((boardingTime >= 22 && boardingTime <= 23) || (boardingTime <=6 && boardingTime >= 0) ) {
+            totalFee = totalFee * 12 / 10;
+            document.write("할증입니다.<br>");
+        }
+
+        document.write("거리 : " + distance + "<br>");
+        document.write("탑승시간 : " + boardingTime + "<br>");
+        document.write(totalFee + "원");
+
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

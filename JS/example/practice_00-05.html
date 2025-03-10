@@ -4,13 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title>멤버십 0.1%</title>
-</head>
-<body>
     <script>
         let budget = 100000;
 
         // while(budget >= 1000) {
-        let price = parseInt(prompt("출금 금액 : "));
+        let price = parseInt(prompt("출금 금액 : "));50000
         
         if(price > budget) {
             document.write("돈 도 없는게 까불어 팍 씨 <br> 잔액 : " + (budget));
@@ -26,11 +24,27 @@
         // }
         function clickbutton() {
             document.getElementById("bank").innerHTML += "<p>두둥탁</p>"
-
         }
     
+        function withDraw() {
+            let inputValue = document.getElementById("withdraw").value;
+            document.getElementById("expectWithdraw").textContent = inputValue;
+            inputValue = budget - inputValue
+        }
+
+        function deposit() {
+            let inputValue = document.getElementById("deposit").value;
+            inputValue = budget + inputValue 
+            document.getElementById("expectDeposit").textContent = inputValue;
+        }
     </script>
-    
+</head>
+<body>
+    <input type="text" id="withdraw" oninput="withDraw()" placeholder="출금할금액을 입력하세요">
+    <div id="expectWithdraw"></div>
     <button onclick="clickbutton()">버튼</button>
-    <div id="bank"></div>
+
+    <input type="text" id="deposit" oninput="deposit()" placeholder="입금할금액을 입력하세요">
+    <div id="expectDeposit"></div>
+    <button onclick="clickbutton()">버튼</button>
 </html>
