@@ -16,8 +16,8 @@
             const change = money - (fnum * 1200);
             if (money >= 1200) {
                 for (let i = 1; i <= fnum; i++) {
-                    food = Math.floor(Math.random * 3 + 1 );
-                    document.write("이미지");
+                    let food = Math.floor(Math.random() * 3 + 1 );
+                    document.write(i + "<img src='../instructionalMaterials/"+ food +".png'>");
                 }
                 document.write("<h3>합 : " + fnum * 1200 + ", 반환 : " + change + "");
             } else {
@@ -25,6 +25,7 @@
             }
         }
     </script>
+    
 </body>
 
 </html>

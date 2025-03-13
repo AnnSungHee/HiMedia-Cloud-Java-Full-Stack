@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function inputData() {
+            let arr = [];
+            while(true) {
+                let num = parseInt(prompt("배열에 넣을 번호 입력 -1 넣으면 종료: "));
+                if(num === -1) {
+                    break;
+                } else {
+                    arr.push(num);
+                }
+            }
+            return arr;
+        }
+        
+        let arr = inputData();
+        
+        function addData(arr) {
+            let sum = 0;
+            for(let i = 0; i < arr.length; i++) {
+                sum += arr[i];
+            }
+            return sum;
+        }
+        
+        let sum = addData(arr);
+        
+        document.write("입력받은 배열 : " + arr + "<hr>");
+        document.write("원소들의 총합 : " + sum + "<hr>");
+        document.write("총합의 평균 : " + sum/arr.length + "<hr>");
+    </script>
+</body>
+</html>
