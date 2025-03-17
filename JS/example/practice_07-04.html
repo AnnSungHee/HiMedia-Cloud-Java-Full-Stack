@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>단어 첫 글자 대문자로 변환</title>
+</head>
+<body>
+    <h1>문자열 뒤집기</h1>
+    <textarea id="content"></textarea>
+    <br>
+    <button onclick="firstWordUpper()">변환</button>
+    <hr>
+    <h3>결과:</h3>
+    <p id="result"></p>
+    <script>
+        function firstWordUpper() {
+            // textarea의 적혀진 문자를 공백을 기준으로 분리
+            const content = document.getElementById("content").value.split(" ");
+            // 
+            let str = "";
+            for(let i = 0; i < content.length; i++) {
+                // 첫번째 문자
+                let char = content[i].charAt(0);
+                // 대문자 변환
+                let upperChar = char.toUpperCase();
+                // 기존 문자열 1부터 끝까지 잘라내기
+                str += upperChar + content[i].slice(1) + " ";
+                
+            }
+            document.getElementById("result").innerHTML = str;
+        }
+    </script>
+</body>
+
+</html>

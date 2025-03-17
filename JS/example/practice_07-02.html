@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>문자열에서 단어 찾기</title>
+</head>
+<body>
+    <h1>문자열에서 단어 찾기</h1>
+    <textarea id="content">
+        미 에너지부가 한국을 '민감국가'(Sensitive Country)로 지정한 것이 사실로 확인되면서 파장이 커지고 있는 가운데, 윤석열 대통령을 비롯한 여권 인사들의 핵무장 주장이 이같은 결과를 초래했다는 분석이 나왔다.
+
+17일 CBS <김현정의 뉴스쇼>에 출연한 조국혁신당 김준형 의원은 핵을 가지지도 않은 한국이 왜 민감국가에 포함된 것이냐는 질문에 "핵(때문)이라고 확신한다. 윤석열 대통령이 2023년 1월 <조선일보>와 인터뷰에서 핵무장론을 본격적으로 등장시켰다"고 답했다.
+
+에너지부는 정책적 이유로 특별한 고려를 해야 할 국가를 민감국가로 분류하고 있는데 국가 안보나 테러지원국, 또는 핵 비확산 문제와 지역 불안정, 경제안보 등의 이유로 이같은 조치를 취하고 있다고 홈페이지에서 밝히고 있다. 에너지부는 지난 1월 바이든 정부 말기에 한국을 민감국가로 분류했는데 그 이유는 설명하지 않고 있다.
+
+김 의원은 윤석열 대통령이 2023년 1월 2일 공개된 <조선일보>와 인터뷰에서 "한미가 미국의 핵전력을 '공동 기획(Joint Planning)-공동 연습(Joint Exercise)' 개념으로 운용하는 방안을 논의하고 있다"는 발언부터 문제가 됐다고 지적했다. 이 발언 직후인 미국 현지시간으로 2일 조 바이든 대통령은 기자들로부터 '지금 한국과 공동 핵 연습을 논의하고 있느냐'는 질문에 "아니다(No)"라고 말하며 한미 양국이 온도차를 보이기도 했다.
+
+그럼에도 윤 대통령은 이 인터뷰 이후 그해 1월 11일 열린 외교부·국방부 업무 보고에서 "문제가 심각해져 가지고 대한민국에 무슨 전술핵 배치를 한다든지 우리 자신이 자체 핵을 보유할 수도 있다"며 핵무장 가능성을 이어갔다.
+
+김 의원은 "이후 (2023년) 4월 워싱턴 선언에 NPT(핵확산금지조약) 체제를 준수한다는 말이 들어갔다. 이건 미국이 한국을 의심해서 핵무기를 이전하거나 전술핵(을 한반도에 배치하는 것)이 아니라고 박아두는 것"이라며 윤 대통령의 이러한 발언에 바이든 정부가 민감하게 반응했다고 분석했다.
+    </textarea>
+    <br>
+    <input type="text" id="word">
+    <button onclick="findWord()">계산</button><hr>
+    <h3>결과:</h3>
+    <p id="result"></p>
+    <script>
+        function findWord() {
+            const word = document.getElementById("word").value;
+            const content = document.getElementById("content").value;
+            console.log(content);
+            let arr = content.split(word);
+            console.log(arr);
+            console.log(arr.length);
+            document.getElementById("result").innerHTML = `단어 출현 횟수 : ${arr.length - 1}`;
+        }
+    </script>
+</body>
+
+</html>

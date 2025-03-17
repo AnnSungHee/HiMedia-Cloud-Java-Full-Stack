@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>문자열 뒤집기</title>
+</head>
+<body>
+    <h1>문자열 뒤집기</h1>
+    <input type="text" id="content">
+    <br>
+    <button onclick="reverseWord()">뒤집기</button><hr>
+    <h3>결과:</h3>
+    <p id="result"></p>
+    <script>
+        function reverseWord() {
+            const content = document.getElementById("content").value.split("");
+            console.log(content);
+            const arr = content.reverse();
+            console.log(arr);
+            let str = "";
+            for(let i = 0; i < arr.length; i++) {
+                str += arr[i];
+            }
+            document.getElementById("result").innerHTML = str;
+        }
+    </script>
+</body>
+
+</html>
