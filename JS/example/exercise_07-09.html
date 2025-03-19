@@ -5,29 +5,21 @@
     <title>무작위로 배경색 버뀨가</title>
 </head>
 <body>
-    <h2>궁금한 날짜를 입력하세요:</h2>
-    <input type="number" id="year" placeholder="년">
-    <input type="number" id="month" placeholder="월">
-    <input type="number" id="day" placeholder="일">
-    <button onclick="calcuateDays()">계산</button><hr>
-    <p id="today"></p>
-    <p id="result"></p>
     <script>
-        function calcuateDays() {
-            const year = parseInt(document.getElementById("year").value);
-            const month = parseInt(document.getElementById("month").value);
-            const day = parseInt(document.getElementById("day").value);
-            const today = new Date();
-            const inputDate = new Date(year, month-1, day);
-            const timeDiff = today - inputDate;
-            const daysDiff = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
-
-            document.getElementById("today").innerHTML = `${today.toLocaleString()}`;
-            if(daysDiff >= 0) {
-                document.getElementById("result").innerHTML = `${daysDiff}일 전`;
-            } else {
-                document.getElementById("result").innerHTML = `${-(daysDiff)}일 남았음`;
+        const letters = "0123456789ABCDEF";
+        let color = "#";
+        let count = 1;
+        let intervalID = setInterval(changeColor, 1000);
+        function changeColor() {
+            console.log()
+            if (++count > 25) {
+                clearInterval(intervalID);
             }
+            for(let k = 0; k < 6; k++) {
+                color += letters[Math.floor(Math.random()*16)];
+            }
+            document.write("<div style='background-color:" + color + "'>" + color + "</div>");
+            color = "#";
         }
     </script>
 </body>

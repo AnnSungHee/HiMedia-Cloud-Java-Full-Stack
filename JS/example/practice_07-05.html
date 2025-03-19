@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>할 일 목록</title>
+    <style>
+        .todo-item {
+            background-color: bisque;
+            margin: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>할 일 목록</h1>
+    <input type="text" id="todoInput" placeholder="할일을 입력하세요.">
+    <button onclick="addTodo()">추가</button>
+    <hr>
+    <ul id="todoList">
+        <li class="todo-item" id="todo1"></li>
+        <li class="todo-item" id="todo2"></li>
+        <li class="todo-item" id="todo3"></li>
+        <li class="todo-item" id="todo4"></li>
+        <li class="todo-item" id="todo5"></li>
+    </ul>
+    <script>
+        /*
+            사용자는 input 태그에 할 일을 입력
+            입력된 할 일을 li에 삽입
+            최대 할 일 개수는 5개
+            최대 개수를 초과하면 alert로 사용자에게 경고 표시
+        */
+        // 할 일 을 담을 배열
+        let todoItems = [];
+
+        function addTodo() {
+            // 사용자가 입력한 할 일 가져오기
+            let todo = document.getElementById("todoInput").value;
+            // 할 일 배열에 집어넣기
+            if (todoItems.length > 5) {
+                window.alert("5개 넘었다.");
+            } else {
+                todoItems.push(todo);
+                for(let i = 0; i < todoItems.length; i++) {
+                    let index = "todo" + (i+1);
+                    document.getElementById(index).innerHTML = todoItems[i];
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
