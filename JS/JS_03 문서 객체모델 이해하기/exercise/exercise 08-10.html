@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자열 회전시키기</title>
+    <link rel="stylesheet" href="../../instructionalMaterials/style_js.css">
+    <style>
+        #rotate {
+            display: none;
+            font-size: 40px;
+            color: blue;
+        }
+        #container:hover > #rotate {
+            display: inline-block;
+        }
+        div {
+            width: 100%;
+            height: 200px;
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <div id="container">
+        <h1 id="rotate">으후루꾸꾸루후으으후루꾸꾸루후으으후루꾸꾸루후으으후루꾸꾸루후으으후루꾸꾸루후으으후루꾸꾸루후으으후루꾸꾸루후으
+        </h1>
+    </div>
+    <script>
+        const rotate = document.getElementById("rotate");
+        function rotateString() {
+            const text = rotate.innerText;
+            const firstChar = text[0];
+            const rotatedText = text.slice(1) + firstChar;
+            rotate.textContent = rotatedText;
+        };
+        setInterval(rotateString, 20); // 500마다 문자열을 회전
+    </script>
+</body>
+</html>

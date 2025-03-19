@@ -7,34 +7,49 @@
 </head>
 <body>
     <script>
-        /*
-            성적 처리를 위한 학생 개체 생성
-        */
         const student = {
-            // 학생의 이름
-            name : "김철수",
-            // 학번
-            studentId : 123456,
-            // 나이
-            age : 17,
-            // 성별
-            gender : "Male",
-            // 학년
-            grade : 3,
-            // 전공
-            // 반
-            // 성적
-            // 출석
-            // 교사
-            // 과목
-            // 평균 성적
-            // 주소
-            // 연락처
-            // 이메일
-            // 보호자 정보
+            id: "20253010001",
+            name: "오지환",
+            scores: [],
+            addScore(score) {
+                this.scores.push(score);
+                console.log(`${score.score}점 입력`);
+            },
+            getTotal() {
+                let sum = 0;
+                for(let s of this.scores) {
+                    sum = sum + s.score;
+                }
+                return sum;
+            },
+            getAverage() {
+                let sum = this.getTotal();
+                let avg = sum / this.scores.length;
+                this.avg = avg;
+                return avg;
+            }
+        }
 
-        };
-
+        student.addScore({
+            subject : "HTML", 
+            score: 65
+        });
+        student.addScore({
+            subject : "CSS", 
+            score: 75
+        });
+        student.addScore({
+            subject : "JavaScript", 
+            score: 85
+        });
+        student.addScore({
+            subject : "인성", 
+            score: 95
+        });
+        
+        document.write(student.getTotal() + "<br>");
+        document.write(student.getAverage() + "<br>");
+        document.write(student.avg);
     </script>
     
 </body>

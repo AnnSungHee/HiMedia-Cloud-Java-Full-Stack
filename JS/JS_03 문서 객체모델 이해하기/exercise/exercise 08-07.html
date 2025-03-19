@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크박스에서 값 여러 개 읽기</title>
+</head>
+<body>
+    <input id="1500" type="checkbox" name="myAdd" value="1500" onclick="addMoney(id)">
+    <label for="1500">추가채소 1500원</label><br>
+    <input id="1000" type="checkbox" name="myAdd" value="1000" onclick="addMoney(id)">
+    <label for="1000">추가채소 1000원</label><br>
+    <input id="500" type="checkbox" name="myAdd" value="500" onclick="addMoney(id)">
+    <label for="500">추가채소 500원</label>
+    <hr>
+    <p id="result" onload="wakeUp()"></p>
+    <input type="button" value="reset" onClick="resetCheckbox()">
+    <script>
+        let sum = 0;
+
+        window.onload = function() {
+            document.getElementById("result").innerHTML = `추가금액: ${sum}원`;
+        }
+
+
+        function addMoney(id){
+            let obj = document.getElementById(id);
+            obj.checked ? sum += parseInt(obj.value) : sum -= parseInt(obj.value)
+            // if(obj.checked) {
+            //     sum += parseInt(obj.value);
+            // } else {
+            //     sum -= parseInt(obj.value);
+            // }
+            document.getElementById("result").innerHTML = `추가금액: ${sum}원`;
+        }
+
+        function resetCheckbox() {
+            sum = 0
+            document.getElementById("result").innerHTML = `추가금액: ${sum}원`;
+            const adds = document.getElementsByName("myAdd");
+            for (let i = 0; i < adds.length; i++) {
+                adds[i].checked = false;
+            }
+        }
+    </script>
+</body>
+</html>

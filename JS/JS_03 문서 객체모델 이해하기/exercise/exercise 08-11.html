@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 변경하기</title>
+</head>
+<body style="text-align: center;">
+    <img id="image" src="../../instructionalMaterials/1.png"><br>
+    <input type="button" value="Change" onclick="changeImage()">
+    <script>
+        let toggle = 1;
+        function changeImage() {
+            if (++toggle % 2 == 0) {
+                document.getElementById("image").src = "../../instructionalMaterials/2.png"
+            } else {
+                document.getElementById("image").src = "../../instructionalMaterials/3.png"
+            }
+        }
+    </script>
+</body>
+</html>
