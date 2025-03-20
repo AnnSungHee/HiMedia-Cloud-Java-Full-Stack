@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>이미지 슬라이더</h1>
+    <img id="africa" src="../../instructionalMaterials/media/africa0.jpg">
+    <button onclick="leftclick()">왼쪽</button>
+    <button onclick="rightclick()">오른쪽</button>
+
+    <script>
+        function leftclick() {
+            let img =  document.getElementById("africa");
+            
+            let index = parseInt(img.src.charAt(img.src.length - 5));
+            index--;
+            index = index < 0 ? 3 : index;
+
+            let newSrc = img.src.slice(0, -5) + index + ".jpg"; 
+
+            img.src = newSrc
+        }
+
+        function rightclick() {
+            let img =  document.getElementById("africa");
+            
+            let index = parseInt(img.src.charAt(img.src.length - 5));
+            index++;
+            index = index > 3 ? 0 : index;
+
+            let newSrc = img.src.slice(0, -5) + index + ".jpg"; 
+
+            img.src = newSrc
+        }
+    </script>
+</body>
+</html>
