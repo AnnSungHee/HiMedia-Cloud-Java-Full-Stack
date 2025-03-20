@@ -1,0 +1,43 @@
+<!-- add event listner를 사용해서 구현하기 -->
+<!-- form 테그 구현 -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="name">이름</label>
+        <input id="name" type="text">
+        
+        <input type="checkbox" id="terms">
+        <label for="terms">약관에 동의합니다.</label>
+        <button type="submit">제출</button>
+    </form>
+    <p id="printName"></p>
+    <p id="termResult"></p>
+    <!--  -->
+    <script>
+        let submit = document.querySelector("[type='submit']");
+        submit.addEventListener("click" , (e) => {
+            e.preventDefault();
+            let name = document.getElementById("name").value;
+            document.getElementById("printName").innerText = `이름 : ${name}`; 
+            
+            let term = null;
+            if(document.getElementById("terms").checked) {
+                term = "동의하였습니다.";
+            } else {
+                term = "동의하지 않음.";
+            }
+
+            document.getElementById("termResult").innerText = `약관동의 : ${term}`;
+            console.log(e.type);
+            console.log(e);
+        })
+        console.log(submit.innerText);
+    </script>
+</body>
+</html>

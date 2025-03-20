@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 리스너 여러 개 등록하기</title>
+    <style>
+        body { text-align: center; }
+        #rotateImage { transition: transform 1s; }
+    </style>
+</head>
+<body>
+    <h4>addEventListener()와 이름 없는 함수 모두 사용하면</h4>
+    <h4>마우스 커서를 이미지 위에 올렸다가 치워보세요</h4><hr>
+    <img id="rotateImage" src="../../instructionalMaterials/1.png">
+    <script>
+        let image = document.getElementById("rotateImage");
+        
+        // 작아지기
+        image.addEventListener("mouseover", function() {
+            image.style.transform = "scale(0, 0)";
+        })
+
+        // 커지기
+        image.addEventListener("mouseover", function() {
+            image.style.transform = "scale(1, 1)";
+        })
+
+
+        image.onmouseover = function gone() {
+            
+        }
+
+        image.onmouseout = function gone() {
+            
+        }
+    </script>
+</body>
+</html>
