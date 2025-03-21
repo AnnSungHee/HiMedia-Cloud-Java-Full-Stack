@@ -1,0 +1,61 @@
+<!-- createElement를 사용해서 구현하기 -->
+<!-- visiable :  -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>사용지 목록 추가</title>
+    <style>
+        .product-container {display: flex; gap: 20px;}
+        .product-card {
+            border: 1px solid #ddd;
+            padding: 10px;
+            width: 150px;
+            text-align: center;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h2>제품 목록</h2>
+    <div class="product-container" id="productContainer" src=""></div>
+    <script>
+        const products = [
+            {name: "노트북", price: 1500000, image: "../노트북.webp"},
+            {name: "스마트폰", price: 800000, image: "../핸드폰.webp"},
+            {name: "태블릿", price: 600000, image: "../태블릿.webp"}
+        ];
+
+        const container = document.getElementById("productContainer");
+
+        // forEach문을 사용하여 노드 추가
+        products.forEach((product) => {
+            const card = document.createElement("div");
+            card.className = "product-card";
+            card.innerHTML = `
+                <img src= "${product.image}" width="100px" height="100px">
+                <h3>${product.name}</h3>
+                <p>가격 : ${product.price.toLocaleString()}원</p>
+            `;
+
+            container.appendChild(card);
+        });
+
+        // for of 문을 사용하여 노드 추가
+        // for(let product of products) {
+        //     const card = document.createElement("div");
+        //     card.className = "product-card";
+        //     card.innerHTML = `
+        //         <img src= "${product.image}" width="100px" height="100px">
+        //         <h3>${product.name}</h3>
+        //         <p>가격 : ${product.price.toLocaleString()}원</p>
+        //     `;
+
+        //     container.appendChild(card);
+        // }
+
+
+    </script>
+</body>
+</html>
