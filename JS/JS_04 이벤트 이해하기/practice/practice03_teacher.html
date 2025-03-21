@@ -1,61 +1,50 @@
-<!-- createElement를 사용해서 구현하기 -->
-<!-- visiable :  -->
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>사용지 목록 추가</title>
-    <style>
-        .product-container {display: flex; gap: 20px;}
-        .product-card {
-            border: 1px solid #ddd;
-            padding: 10px;
-            width: 150px;
-            text-align: center;
-            border-radius: 5px;
-        }
-    </style>
+    <title>이름 검색 추가</title>
 </head>
 <body>
-    <h2>제품 목록</h2>
-    <div class="product-container" id="productContainer" src=""></div>
+    <input type="text" id="search">
+    
+    <ul id="list">
+    
+    </ul>
     <script>
-        const products = [
-            {name: "노트북", price: 1500000, image: "../노트북.webp"},
-            {name: "스마트폰", price: 800000, image: "../핸드폰.webp"},
-            {name: "태블릿", price: 600000, image: "../태블릿.webp"}
+        const players = [
+            {name: "오지환", position: "유격수"},
+            {name: "김현수", position: "좌인수"},
+            {name: "홍창기", position: "우익수"},
+            {name: "박해민", position: "중견수"},
+            {name: "문보경", position: "3루수"},
+            {name: "오스틴", position: "1루수"},
+            {name: "신민재", position: "2루수"},
+            {name: "손주영", position: "투수"},
+            {name: "박동원", position: "포수"}
         ];
 
-        const container = document.getElementById("productContainer");
 
-        // forEach문을 사용하여 노드 추가
-        products.forEach((product) => {
-            const card = document.createElement("div");
-            card.className = "product-card";
-            card.innerHTML = `
-                <img src= "${product.image}" width="100px" height="100px">
-                <h3>${product.name}</h3>
-                <p>가격 : ${product.price.toLocaleString()}원</p>
-            `;
-
-            container.appendChild(card);
+        const list = document.getElementById("list");
+        
+        document.getElementById("search").addEventListener("input", () => {
+            // 아이디가 search인 태그의 value 속성 값을 search에 저장
+            const search = document.getElementById("search").value;
+            // 기존에 있는 ul태그의 자식 내용들 제거
+            list.innerHTML = "";
+            // players 배열을 다 돌기
+            for(let i = 0; i < players.length; i++) {
+                // 만약 사용자가 검색한 값이 현재 방문한 player 배열의 요소의 name 값에 포함되어 있다면
+                if(players[i].name.includes(search)) {
+                    // li 태그를 생성한다.
+                    const li = document.createElement("li");
+                    // 생성된 li 태그의 선수의 이름과 포지션을 입력한다.
+                    li.innerText = `${players[i].name} (${players[i].position})`;
+                    // 생성된 li 태그를 부모요소인 ul의 자식요소로 추가한다.
+                    list.appendChild(li);
+                }
+            }
         });
-
-        // for of 문을 사용하여 노드 추가
-        // for(let product of products) {
-        //     const card = document.createElement("div");
-        //     card.className = "product-card";
-        //     card.innerHTML = `
-        //         <img src= "${product.image}" width="100px" height="100px">
-        //         <h3>${product.name}</h3>
-        //         <p>가격 : ${product.price.toLocaleString()}원</p>
-        //     `;
-
-        //     container.appendChild(card);
-        // }
-
-
     </script>
 </body>
 </html>
