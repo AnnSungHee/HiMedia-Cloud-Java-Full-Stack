@@ -1,0 +1,60 @@
+<!-- 
+1. 사용자가 로또 번호 뽑기를 누르면
+2. 1~45 사이의 랜덤한 숫자 5개를 사용자의 화면에 노출함
+3. 이때 번호는 서로 중복이 되는 값이 없어야 함
+4. 이때 번호는 가로로 보여줘야함 
+-->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 번호 뽑기</title>
+</head>
+<body>
+    <ul id="lotteryList"></ul>
+    <input type="button" value="로또 번호 뽑기" id="lotteryButton">
+    <script>
+        const ul = document.getElementById("lotteryList");
+        const button = document.getElementById("lotteryButton");
+        
+        button.addEventListener("click", () => {
+            ul.innerText = "";
+            
+            const lottery = {
+                numbers : [],
+                includes(param) {
+                    let result = false;
+                    for(let number of this.numbers) {
+                        if(number === param) {
+                            result = true;
+                            break;
+                        }
+                    }
+                    return result;
+                }
+            };
+            
+            while(lottery.numbers.length < 6) {
+                // 랜덤으로 번호를 뽑는다
+                let randomNumber = Math.floor(Math.random()*45+1);
+                
+                // 이전의 번호와 중복되는 값이 없어야 함
+                if(!lottery.includes(randomNumber)) {
+                    // 뽑은 번호를 배열에 넣는다.
+                    lottery.numbers.push(randomNumber);
+                    
+                    // 태그 생성
+                    const li = document.createElement("li");
+                    
+                    // 번호 삽입
+                    li.innerText = randomNumber;
+                    
+                    // 화면에 출력
+                    ul.appendChild(li);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
