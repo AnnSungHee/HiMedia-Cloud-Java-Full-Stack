@@ -1,29 +1,68 @@
-import "./App.css";
+import Header from "./Header";
+import Nav from "./Nav";
+import Article from "./Article";
 
 // JSX와 HTML의 차이는
 // return에 들어가는 HTML은 HTML이 아니라 JSX임
 // return에
 // return 값 전체를 주석처리하면 자바스크립트 주석으로 되는데
 // return 값 내부에서 주석처리하면 {/**/} 이렇게 되네?
+// function Header(props) {
+//   return (
+//     <header>
+//       <h1>
+//         <a href="/" onClick={(e) => {
+//           e.preventDefault();
+//           props.onChangeMode();
+//         }}>{props.title}</a>
+//       </h1>
+//     </header>
+//   );
+// };
+
+// function Nav(props) {
+//   const lis = [];
+
+//   for(let i = 0; i < props.topics.length; i++) {
+//     let t = props.topics[i];
+//     lis.push(<li key={t.id}><a id={t.id} href={'/read/' + t.id} onClick={(e)=>{
+//       e.preventDefault();
+//       let arr = e.target.href.slice("/");
+//       props.onChangeMode(arr[arr.length -1]);
+//     }}>{t.title}</a></li>)
+//   }
+
+//   return (
+//     <nav>
+//       <ol>
+//         {lis}
+//       </ol>
+//     </nav>
+//   );
+// };
+
+// function Article(props) {
+//   return (
+//     <article>
+//       <h2>{props.title}</h2>
+//       {props.body}
+//     </article>
+//   )
+// };
 
 function App() {
+  const topics = [
+    {id: 1 , title: "html", body: "html is ..."},
+    {id: 2 , title: "css", body: "css is ..."},
+    {id: 3 , title: "javascript", body: "javascript is ..."}
+  ]
+
   return (
-    <div>
-      <header>
-        <h1><a href="/">WEB</a></h1>
-      </header>
-      <nav>
-        <ol>
-          <li><a href="/read/1">html</a></li>
-          <li><a href="/read/1">css</a></li>
-          <li><a href="/read/1">js</a></li>
-        </ol>
-      </nav>
-      <article>
-        <h2>Welcome</h2>
-        Hello, WEB
-      </article>
-    </div>
+    <>
+      <Header title="REACT" onChangeMode={()=>{ alert("Header")}}/>
+      <Nav topics={topics} onChangeMode={(id) => {alert(id);}}/>
+      <Article title="Hi" body="Hello, React"/>
+    </>
   );
 }
 
@@ -47,7 +86,6 @@ function App() {
 //   </div>
 //   </>
 //   ); }
-
 
 // function App() {
 //   const loginYn = 'Y';
@@ -94,6 +132,5 @@ function App() {
 //     </>
 //   );
 // }
-
 
 export default App;
