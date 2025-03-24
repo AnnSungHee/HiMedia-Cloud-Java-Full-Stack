@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>선수 목록</h2>
+    <input type="text" id="searchInput" placeholder="이름검색">
+    <ul id="playerList"></ul>
+    <script>
+        const players = [
+            { name: "오지환", position: "유격수" },
+            { name: "김현수", position: "좌익수" },
+            { name: "홍창기", position: "우익수" },
+            { name: "박해민", position: "중견수" },
+            { name: "문보경", position: "3루수" },
+            { name: "오스틴", position: "1루수" },
+            { name: "신민재", position: "2루수" },
+            { name: "손주영", position: "투수" },
+            { name: "박동원", position: "포수" }
+        ];
+
+        function renderList(arrList) {
+            // document.getElementById("playerList").innerHTML = "";
+            // for (let player of arrList) {
+            //     const li = document.createElement("li");
+            //     li.innerText = `${player.name} (${player.position})`;
+            //     document.getElementById("playerList").appendChild(li);
+            // }
+            
+            const playerList = document.getElementById("playerList");
+            playerList.innerHTML = arrList.map((player)=>`<li>${player.name} (${player.position})</li>`)
+                   .join("");
+
+        }
+
+        renderList(players);
+
+        document.getElementById("searchInput").addEventListener("input", (e) => {
+            const searchChar = e.target.value;
+            const filterPlayers = players.filter((player) => player.name.includes(searchChar));
+            renderList(filterPlayers);           
+        });
+
+
+
+
+
+
+        // let names="오지환 이병규 김현수 홍창기 문성주 오스틴";
+        // const nameArr = names.split(" ");
+        // const filterArr = nameArr.filter((player)=>player.includes("주"));
+        // console.log(filterArr);
+
+    </script>
+</body>
+
+</html>
