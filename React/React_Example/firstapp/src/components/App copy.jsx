@@ -1,83 +1,63 @@
 import Header from "./Header";
 import Nav from "./Nav";
 import Article from "./Article";
+import Create from "./Create";
+import { useState } from "react";
 
 // JSX와 HTML의 차이는
 // return에 들어가는 HTML은 HTML이 아니라 JSX임
 // return에
 // return 값 전체를 주석처리하면 자바스크립트 주석으로 되는데
 // return 값 내부에서 주석처리하면 {/**/} 이렇게 되네?
-// function Header(props) {
-//   return (
-//     <header>
-//       <h1>
-//         <a href="/" onClick={(e) => {
-//           e.preventDefault();
-//           props.onChangeMode();
-//         }}>{props.title}</a>
-//       </h1>
-//     </header>
-//   );
-// };
-
-// function Nav(props) {
-//   const lis = [];
-
-//   for(let i = 0; i < props.topics.length; i++) {
-//     let t = props.topics[i];
-//     lis.push(<li key={t.id}><a id={t.id} href={'/read/' + t.id} onClick={(e)=>{
-//       e.preventDefault();
-//       let arr = e.target.href.slice("/");
-//       props.onChangeMode(arr[arr.length -1]);
-//     }}>{t.title}</a></li>)
-//   }
-
-//   return (
-//     <nav>
-//       <ol>
-//         {lis}
-//       </ol>
-//     </nav>
-//   );
-// };
-
-// function Article(props) {
-//   return (
-//     <article>
-//       <h2>{props.title}</h2>
-//       {props.body}
-//     </article>
-//   )
-// };
 
 function App() {
-  let mode = 'WELCOME';
-
-  const topics = [
+  const [mode, setMode] = useState("WELCOME");
+  const [id, setId] = useState(0);
+  const [topics, setTopics] = useState([
     {id: 1 , title: "html", body: "html is ..."},
     {id: 2 , title: "css", body: "css is ..."},
     {id: 3 , title: "javascript", body: "javascript is ..."}
-  ];
-
+  ]);
   let content = null;
-
   if(mode === "WELCOME") {
     content = <Article title="Welcome" body="Hello, Web"/>;
   } else if (mode === "READ") {
-    content = <Article title="Welcome" body="Hello, READ"/>;
+    let title, body;
+    for(let topic of topics) {
+      if(topic.id === parseInt(id)) {
+        title = topic.title;
+        body= topic.body;
+        break;
+      }
+    }
+    content = <Article title={title} body={body}/>;
+  } else if (mode === "CREATE") {
+    content = <Create onCreate={(_title, _body) => {
+      let newTopic = {id: topics.length+1, title: _title, body: _body };
+      // ...: rest연산자 배열안의 값들을 다 집어넣음
+      let newTopics = [...topics, newTopic];
+      setTopics(newTopics);
+      setId(newTopic.id);
+      setMode("READ");
+    }}/>;
   }
 
 
   return (
     <>
       <Header title="REACT" onChangeMode={()=>{ 
-        mode = "WELCOME";
+        setMode("WELCOME");
       }}/>
-      <Nav topics={topics} onChangeMode={(id) => {
-        alert(id);
-        mode = "READ";
+      <Nav topics={topics} onChangeMode={(_id) => {
+        // alert(id);
+        setId(_id);
+        setMode("READ");
       }}/>
       {content}
+      <a href="/create" onClick={(e) => {
+        e.preventDefault();
+        setMode("CREATE");
+      }}>Create</a>
     </>
   );
 }
