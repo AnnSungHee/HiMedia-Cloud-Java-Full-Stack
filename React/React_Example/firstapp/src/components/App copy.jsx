@@ -51,17 +51,33 @@ import Article from "./Article";
 // };
 
 function App() {
+  let mode = 'WELCOME';
+
   const topics = [
     {id: 1 , title: "html", body: "html is ..."},
     {id: 2 , title: "css", body: "css is ..."},
     {id: 3 , title: "javascript", body: "javascript is ..."}
-  ]
+  ];
+
+  let content = null;
+
+  if(mode === "WELCOME") {
+    content = <Article title="Welcome" body="Hello, Web"/>;
+  } else if (mode === "READ") {
+    content = <Article title="Welcome" body="Hello, READ"/>;
+  }
+
 
   return (
     <>
-      <Header title="REACT" onChangeMode={()=>{ alert("Header")}}/>
-      <Nav topics={topics} onChangeMode={(id) => {alert(id);}}/>
-      <Article title="Hi" body="Hello, React"/>
+      <Header title="REACT" onChangeMode={()=>{ 
+        mode = "WELCOME";
+      }}/>
+      <Nav topics={topics} onChangeMode={(id) => {
+        alert(id);
+        mode = "READ";
+      }}/>
+      {content}
     </>
   );
 }
