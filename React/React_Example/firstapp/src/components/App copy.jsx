@@ -15,76 +15,113 @@ function App() {
   const [mode, setMode] = useState("WELCOME");
   const [id, setId] = useState(0);
   const [topics, setTopics] = useState([
-    {id: 1 , title: "html", body: "html is ..."},
-    {id: 2 , title: "css", body: "css is ..."},
-    {id: 3 , title: "javascript", body: "javascript is ..."}
+    { id: 1, title: "html", body: "html is ..." },
+    { id: 2, title: "css", body: "css is ..." },
+    { id: 3, title: "javascript", body: "javascript is ..." },
   ]);
-  
+  const [nextId, setNextId] = useState(topics.length + 1);
+
   let content = null;
 
   let contextControl = null;
 
-  if(mode === "WELCOME") {
-    content = <Article title="Welcome" body="Hello, Web"/>;
+  if (mode === "WELCOME") {
+    content = <Article title="Welcome" body="Hello, Web" />;
   } else if (mode === "READ") {
     let title, body;
-    for(let topic of topics) {
-      console.log("for 문 도는중");
-      if(topic.id == parseInt(id)) {
+    for (let topic of topics) {
+      if (topic.id === parseInt(id)) {
         title = topic.title;
-        body= topic.body;
-        console.log(title + " "+ body)
+        body = topic.body;
         break;
       }
     }
-    console.log("aasd")
-    content = <Article title={title} body={body}/>;
-    contextControl = <li><a href={"/update/" + id} onClick={(e) => {
-      e.preventDefault();
-      setMode("UPDATE");
-    }}>Update</a></li>
+    content = <Article title={title} body={body} />;
+    contextControl = (
+      <>
+        <li>
+          <a
+            href={"/update/" + id}
+            onClick={(e) => {
+              e.preventDefault();
+              setMode("UPDATE");
+            }}
+            >
+            Update
+          </a>
+        </li>
+        <li>
+          <button onClick={(e)=>{
+            const filterTopics = topics.filter((t) => t.id !== Number(id));
+            setTopics(filterTopics);
+            setMode("READ");
+          }}>Delete</button>
+        </li>
+      </>
+    );
   } else if (mode === "CREATE") {
-    content = <Create onCreate={(_title, _body) => {
-      let newTopic = {id: topics.length+1, title: _title, body: _body };
-      // ...: rest연산자 배열안의 값들을 다 집어넣음
-      let newTopics = [...topics, newTopic];
-      setTopics(newTopics);
-      setId(newTopic.id);
-      setMode("READ");
-    }}/>;
+    content = (
+      <Create
+        onCreate={(_title, _body) => {
+          let newTopic = { id: nextId, title: _title, body: _body };
+          // ...: rest연산자 배열안의 값들을 다 집어넣음
+          let newTopics = [...topics, newTopic];
+          setTopics(newTopics);
+          setId(newTopic.id);
+          setNextId(nextId+1)
+          setMode("READ");
+        }}
+      />
+    );
   } else if (mode === "UPDATE") {
-    let topic = topics.find((t)=>t.id === Number(id)); 
-    content = <Update title = {topic.title} body = {topic.body} onUpdate={(title, body) => {
-      const updateTopic = {id: Number(id), title, body};
-      const updateTopics = [...topics];
-      for(let i = 0; i < updateTopics.length; i++) {
-        if(updateTopics[i].id === Number(id)) {
-          updateTopics[i] = updateTopic;
-          break; 
-        }
-      }
-      setTopics(updateTopics);
-      setMode("READ");
-    }}></Update>
+    let topic = topics.find((t) => t.id === Number(id));
+    content = (
+      <Update
+        title={topic.title}
+        body={topic.body}
+        onUpdate={(title, body) => {
+          const updateTopic = { id: Number(id), title, body };
+          const updateTopics = [...topics];
+          for (let i = 0; i < updateTopics.length; i++) {
+            if (updateTopics[i].id === Number(id)) {
+              updateTopics[i] = updateTopic;
+              break;
+            }
+          }
+          setTopics(updateTopics);
+          setMode("READ");
+        }}
+      ></Update>
+    );
   }
-
 
   return (
     <>
-      <Header title="REACT" onChangeMode={()=>{ 
-        setMode("WELCOME");
-      }}/>
-      <Nav topics={topics} onChangeMode={(_id) => {
-        // alert(id);
-        setId(_id);
-        setMode("READ");
-      }}/>
+      <Header
+        title="REACT"
+        onChangeMode={() => {
+          setMode("WELCOME");
+        }}
+      />
+      <Nav
+        topics={topics}
+        onChangeMode={(_id) => {
+          // alert(id);
+          setId(_id);
+          setMode("READ");
+        }}
+      />
       {content}
       <li>
-        <a href="/create" onClick={(e) => {
-          e.preventDefault();
-          setMode("CREATE");
-        }}>Create</a>
+        <a
+          href="/create"
+          onClick={(e) => {
+            e.preventDefault();
+            setMode("CREATE");
+          }}
+        >
+          Create
+        </a>
       </li>
       {contextControl} {/* 기본값을 null */}
     </>
@@ -159,4 +196,3 @@ function App() {
 // }
 
 export default App;
- 
