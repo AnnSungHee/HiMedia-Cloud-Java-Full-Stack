@@ -1,9 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
+
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+
 /*
 ReactDOM.createRoot = 매개변수로 들어오는 요소를 가상 DOM의 루트로 삼는다.
 root.render() : 매개변수로 들어오는 값들을 렌더링한다.

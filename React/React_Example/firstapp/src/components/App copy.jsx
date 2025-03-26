@@ -3,6 +3,7 @@ import Nav from "./Nav";
 import Article from "./Article";
 import Create from "./Create";
 import { useState } from "react";
+import Update from "./Update";
 
 // JSX와 HTML의 차이는
 // return에 들어가는 HTML은 HTML이 아니라 JSX임
@@ -18,19 +19,30 @@ function App() {
     {id: 2 , title: "css", body: "css is ..."},
     {id: 3 , title: "javascript", body: "javascript is ..."}
   ]);
+  
   let content = null;
+
+  let contextControl = null;
+
   if(mode === "WELCOME") {
     content = <Article title="Welcome" body="Hello, Web"/>;
   } else if (mode === "READ") {
     let title, body;
     for(let topic of topics) {
-      if(topic.id === parseInt(id)) {
+      console.log("for 문 도는중");
+      if(topic.id == parseInt(id)) {
         title = topic.title;
         body= topic.body;
+        console.log(title + " "+ body)
         break;
       }
     }
+    console.log("aasd")
     content = <Article title={title} body={body}/>;
+    contextControl = <li><a href={"/update/" + id} onClick={(e) => {
+      e.preventDefault();
+      setMode("UPDATE");
+    }}>Update</a></li>
   } else if (mode === "CREATE") {
     content = <Create onCreate={(_title, _body) => {
       let newTopic = {id: topics.length+1, title: _title, body: _body };
@@ -40,6 +52,20 @@ function App() {
       setId(newTopic.id);
       setMode("READ");
     }}/>;
+  } else if (mode === "UPDATE") {
+    let topic = topics.find((t)=>t.id === Number(id)); 
+    content = <Update title = {topic.title} body = {topic.body} onUpdate={(title, body) => {
+      const updateTopic = {id: Number(id), title, body};
+      const updateTopics = [...topics];
+      for(let i = 0; i < updateTopics.length; i++) {
+        if(updateTopics[i].id === Number(id)) {
+          updateTopics[i] = updateTopic;
+          break; 
+        }
+      }
+      setTopics(updateTopics);
+      setMode("READ");
+    }}></Update>
   }
 
 
@@ -54,10 +80,13 @@ function App() {
         setMode("READ");
       }}/>
       {content}
-      <a href="/create" onClick={(e) => {
-        e.preventDefault();
-        setMode("CREATE");
-      }}>Create</a>
+      <li>
+        <a href="/create" onClick={(e) => {
+          e.preventDefault();
+          setMode("CREATE");
+        }}>Create</a>
+      </li>
+      {contextControl} {/* 기본값을 null */}
     </>
   );
 }
@@ -130,3 +159,4 @@ function App() {
 // }
 
 export default App;
+ 
