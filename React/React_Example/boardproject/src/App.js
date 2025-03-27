@@ -26,31 +26,54 @@ function App() {
     case "MAIN":
       break;
     case "CREATE":
-      content = <Create onCreatePost={(newPost) => {
-        const newId = postlist[postlist.length-1].id + 1;
-        const newPostInfo = {
-          id: newId, 
-          author: newPost.author, 
-          title: newPost.title,
-          body: newPost.body
-        }; 
-        const newPostList = [...postlist, newPostInfo];
-        setList(newPostList);
-        setMode("LIST");
-      }}/>;
+      content = (
+        <Create
+          onCreatePost={(newPost) => {
+            const newId = postlist[postlist.length - 1].id + 1;
+            const newPostInfo = {
+              id: newId,
+              author: newPost.author,
+              title: newPost.title,
+              body: newPost.body,
+            };
+            const newPostList = [...postlist, newPostInfo];
+            setList(newPostList);
+            setMode("LIST");
+          }}
+        />
+      );
       break;
     case "LIST":
-      content = <List postlist={postlist} onChangeMode={(id)=> {
-        setMode("READ");
-        console.log("글 눌렀을떄의 매개변수로 넘어온 id 값 : " + id);
-        setReadingId(Number(id));
-      }} />;
+      content = (
+        <List
+          postlist={postlist}
+          onChangeMode={(id) => {
+            setMode("READ");
+            console.log("글 눌렀을떄의 매개변수로 넘어온 id 값 : " + id);
+            setReadingId(Number(id));
+          }}
+        />
+      );
       break;
-      case "READ":
-        const post = postlist.find(post => Number(post.id) === readingId)
-        content = <Read post={post} />;
-        console.log("변경된 상태변수 id : " + readingId);
-        console.log(post);
+    case "READ":
+      const post = postlist.find((post) => Number(post.id) === readingId);
+      content = (
+        <Read
+          post={post}
+          changeMode={(_mode) => {
+            setMode(_mode);
+            console.log(_mode);
+          }}
+        />
+      );
+      console.log("변경된 상태변수 id : " + readingId);
+      console.log(post);
+      break;
+    case "UPDATE":
+      console.log(mode);
+      break;
+    case "DELETE":
+      console.log(mode);
       break;
     default:
       break;
