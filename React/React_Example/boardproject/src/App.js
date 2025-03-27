@@ -23,11 +23,20 @@ function App() {
     case "MAIN":
       break;
     case "CREATE":
-      console.log("gkdlgkdl");
-      content = <Create />;
+      content = <Create onCreatePost={(newPost) => {
+        const newId = postlist[postlist.length-1].id + 1;
+        const newPostInfo = {
+          id: newId, 
+          author: newPost.author, 
+          title: newPost.title,
+          body: newPost.body
+        }; 
+        const newPostList = [...postlist, newPostInfo];
+        setList(newPostList);
+        setMode("LIST");
+      }}/>;
       break;
     case "LIST":
-      content = <List postlist={postlist} />;
       break;
     default:
       break;

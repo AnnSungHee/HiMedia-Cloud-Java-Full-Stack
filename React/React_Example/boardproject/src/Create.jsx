@@ -1,9 +1,29 @@
 export default function Create(props) {
   return (
     <>
-    <input type="text" />
-    <br />
-    <textarea name="" id=""></textarea>
+      <form onSubmit={(e) => {
+        e.preventDefault();
+        const newPost = {
+          author : e.target.author.value,
+          title : e.target.title.value,
+          body : e.target.body.value,
+        }
+        console.log("asd");
+        props.onCreatePost(newPost);
+      }}>
+        <p>
+          <input type="text" name="title" placeholder="제목입력" />
+        </p>
+        <p>
+          <textarea name="body" placeholder="내용입력"></textarea>
+        </p>
+        <p>
+          <input type="text" name="author" placeholder="작성자이름" />
+        </p>
+        <p>
+          <input type="submit" value="저장" />
+        </p>
+      </form>
     </>
   );
 }
