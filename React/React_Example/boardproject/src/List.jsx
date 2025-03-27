@@ -7,7 +7,7 @@ export default function List(props) {
       <>
         <a id = {list.id} href="/" onClick={(e) => {
           e.preventDefault();
-          props.onChangeMode();
+          props.onChangeMode(list.id);
         }}>
           {list.title}({list.author})
         </a>

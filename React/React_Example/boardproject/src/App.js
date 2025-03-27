@@ -20,6 +20,8 @@ function App() {
     { id: 2, title: "목록으로", mode: "LIST" },
   ];
 
+  const [readingId, setReadingId] = useState(0);
+
   switch (mode) {
     case "MAIN":
       break;
@@ -38,12 +40,17 @@ function App() {
       }}/>;
       break;
     case "LIST":
-      content = <List postlist={postlist} onChangeMode={()=> {
+      content = <List postlist={postlist} onChangeMode={(id)=> {
         setMode("READ");
+        console.log("글 눌렀을떄의 매개변수로 넘어온 id 값 : " + id);
+        setReadingId(Number(id));
       }} />;
       break;
-    case "READ":
-      content = <Read postlist={postlist} />;
+      case "READ":
+        const post = postlist.find(post => Number(post.id) === readingId)
+        content = <Read post={post} />;
+        console.log("변경된 상태변수 id : " + readingId);
+        console.log(post);
       break;
     default:
       break;
