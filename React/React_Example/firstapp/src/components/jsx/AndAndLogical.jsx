@@ -11,3 +11,4 @@ function AndAndLogical(){
         </>
     );
 }
+export default AndAndLogical;
