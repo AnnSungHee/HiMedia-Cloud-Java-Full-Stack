@@ -4,6 +4,7 @@ import Header from "./Header";
 import Menu from "./Menu";
 import Create from "./Create";
 import List from "./List";
+import Read from "./Read";
 
 function App() {
   let content = null;
@@ -37,6 +38,12 @@ function App() {
       }}/>;
       break;
     case "LIST":
+      content = <List postlist={postlist} onChangeMode={()=> {
+        setMode("READ");
+      }} />;
+      break;
+    case "READ":
+      content = <Read postlist={postlist} />;
       break;
     default:
       break;
