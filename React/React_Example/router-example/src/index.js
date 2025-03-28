@@ -5,14 +5,15 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 // import App from './App';
-import Study from './Study'
+// import Study from './Study'
+import Task from './Task'
 import reportWebVitals from './reportWebVitals';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <Study/>
+    <Task/>
   </BrowserRouter>
 );
 
