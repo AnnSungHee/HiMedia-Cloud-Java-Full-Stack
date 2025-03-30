@@ -1,4 +1,4 @@
-function App() {
+function FunctionEvent() {
     const handleClick = () => {
         alert("버튼을 클릭했습니다!");
     };
@@ -6,4 +6,4 @@ function App() {
     return <button onClick={handleClick}>클릭하세요!</button>
 };
 
-export default App;
+export default FunctionEvent;
