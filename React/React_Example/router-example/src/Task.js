@@ -4,24 +4,30 @@ import {
   Route,
   Routes,
   useNavigate,
+  useOutletContext,
   useParams,
 } from "react-router-dom";
 
-const  boardArr = [
-  {id: 1, title: "첫 번째 게시글", body: "첫 번째 게시글 내용입니다."},
-  {id: 2, title: "두 번째 게시글", body: "두 번째 게시글 내용입니다."},
-  {id: 3, title: "세 번째 게시글", body: "세 번째 게시글 내용입니다."}
-];
+// const  boardArr = [
+//   {id: 1, title: "첫 번째 게시글", body: "첫 번째 게시글 내용입니다."},
+//   {id: 2, title: "두 번째 게시글", body: "두 번째 게시글 내용입니다."},
+//   {id: 3, title: "세 번째 게시글", body: "세 번째 게시글 내용입니다."}
+// ];
 
 function Task() {
   // 모든 페이지에서 동일하게 보여지는 공통 레이아웃
   function MainLayOut() {
-
+    const boardArr = [
+      {id: 1, title: "첫 번째 게시글", body: "첫 번째 게시글 내용입니다."},
+      {id: 2, title: "두 번째 게시글", body: "두 번째 게시글 내용입니다."},
+      {id: 3, title: "세 번째 게시글", body: "세 번째 게시글 내용입니다."}
+    ];
+    
     return (
       <>
         <h1>게시판 앱</h1>
         <Link to="/list">목록</Link>
-        <Outlet/>
+        <Outlet context={{boardArr}}/>
       </>
     )
   }
@@ -29,7 +35,7 @@ function Task() {
   // 게시글 목록 컴포넌트
   function List() {
     const boardList = [];
-    
+    const {boardArr} = useOutletContext();
     for(let board of boardArr) {
       boardList.push(
         <li key={board.id} >
@@ -52,6 +58,7 @@ function Task() {
   function Detail() {
     const navigate = useNavigate();
     const {boardid} = useParams();
+    const {boardArr} = useOutletContext();
     const board = boardArr.find(b => b.id === Number(boardid));
     return (
       <>

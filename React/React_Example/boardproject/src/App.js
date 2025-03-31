@@ -1,10 +1,10 @@
 import { useState } from "react";
 
-import Header from "./Header";
-import Menu from "./Menu";
-import Create from "./Create";
-import List from "./List";
-import Read from "./Read";
+import Header from "./components/Header";
+import Menu from "./components/Menu";
+import Create from "./components/Create";
+import List from "./components/List";
+import Read from "./components/Read";
 
 function App() {
   let content = null;

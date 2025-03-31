@@ -72,8 +72,8 @@ function App() {
      * topics/:topicid/test/:number
      * topics/1/test/5
      * {topicid:1, number:5}
-     */
     const { topicid } = useParams();
+     */
     const topic = contents.find((content) => content.id === Number(topicid));
 
     return (
