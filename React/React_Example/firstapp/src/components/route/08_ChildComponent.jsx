@@ -10,7 +10,7 @@ function ChildComponent() {
             <h2>Child Component</h2>
             <p>Data from Parend: {sharedData}</p>
             {/* GrandchildComponent를 렌더링할 Outlet */}
-            <Outlet/>
+            <Outlet context={{sharedData}}/>
         </div>
     );
 }
